@@ -5,7 +5,7 @@
 {
 //open the database
 $db = new PDO('sqlite:restDB.db');
-$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+//$db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $name = $_POST["name"];
@@ -25,7 +25,7 @@ move_uploaded_file($_FILES['photo']['tmp_name'], $photo);
 $original = imagecreatefromjpeg($photo);
 if (!$original) $original = imagecreatefrompng($photo);
 if (!$original) $original = imagecreatefromgif($photo);
-if (!$original) die();
+ 
 
 $width = imagesx($original);     // width of the original image
 $height = imagesy($original);    // height of the original image
@@ -41,8 +41,8 @@ $db->exec("INSERT INTO User (idUser, name, userName, password, address, email, p
 
 //now output the data to a simple html table...
 
-print "<table border=1>";
-print "<tr><td>Name</td><td>Username</td><td>Password</td><td>address</td><td>email</td><td>phonenumber</td><td>photo</td><td>option</td></tr>";
+ print "<table border=1>";
+ print "<tr><td>Name</td><td>Username</td><td>Password</td><td>address</td><td>email</td><td>phonenumber</td><td>photo</td><td>option</td></tr>";
 $result = $db->query('SELECT * FROM User');
 foreach($result as $row)
 {

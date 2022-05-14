@@ -1,0 +1,45 @@
+Restaurant:
+
+    Name
+    Address
+    Category
+    Dishes
+    List Review
+    list orders ???
+    photo
+
+
+User:
+
+    Name
+    Password
+    Address
+    Nr tel
+    Owner ??
+    User ??
+    photo
+
+Dishes:
+
+    Name
+    Price
+    descricao
+    photo
+
+Order:
+
+    cliente
+    Restaurant
+    preco
+    item
+    state
+    photo
+
+Review:
+
+    nota
+    data
+    nome do cliente
+    restaurant
+    
+

@@ -18,26 +18,30 @@ $option = $_POST["option"];
 $photoname = $_POST["photo"];
 $photo = "photos/user/original/".$username.".jpeg";
 $finalpath = "photos/user/thumbs/".$username.".jpeg";
+if(move_uploaded_file($_FILES['photo']['tmp_name'], $photo))
+{
+  // Crete an image representation of the original image
+  $original = imagecreatefromjpeg($photo);
+  if (!$original) $original = imagecreatefrompng($photo);
+  if (!$original) $original = imagecreatefromgif($photo);
+   
+  
+  $width = imagesx($original);     // width of the original image
+  $height = imagesy($original);    // height of the original image
+  $square = min($width, $height);  // size length of the maximum square
+  
+  // Create and save a small square thumbnail
+  $small = imagecreatetruecolor(200, 200);
+  imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
+  imagejpeg($small, $finalpath);
+}
+else{
+  $finalpath = "photos/user/default/defaultuser.jpeg";
+}
 
-move_uploaded_file($_FILES['photo']['tmp_name'], $photo);
-
-// Crete an image representation of the original image
-$original = imagecreatefromjpeg($photo);
-if (!$original) $original = imagecreatefrompng($photo);
-if (!$original) $original = imagecreatefromgif($photo);
- 
-
-$width = imagesx($original);     // width of the original image
-$height = imagesy($original);    // height of the original image
-$square = min($width, $height);  // size length of the maximum square
-
-// Create and save a small square thumbnail
-$small = imagecreatetruecolor(200, 200);
-imagecopyresized($small, $original, 0, 0, ($width>$square)?($width-$square)/2:0, ($height>$square)?($height-$square)/2:0, 200, 200, $square, $square);
-imagejpeg($small, $finalpath);
 //Insert record  
 //.............
-$db->exec("INSERT INTO User (idUser, name, userName, password, address, email, phoneNumber, photo, option) VALUES (null,'$name', '$username', '$password', '$address', '$email', '$phonenumber', '$photo','$option');");
+$db->exec("INSERT INTO User (idUser, name, userName, password, address, email, phoneNumber, photo, option) VALUES (null,'$name', '$username', '$password', '$address', '$email', '$phonenumber', '$finalpath','$option');");
 
 //now output the data to a simple html table...
 
@@ -58,6 +62,7 @@ foreach($result as $row)
 }
 print "</table>";
 
+
 $db = NULL;
 }
 catch(PDOException $e)
@@ -74,7 +79,7 @@ print 'Exception : ' .$e->getMessage();
     </head>
     <body>
         <h1>Registration complete!</h1>
-        <meta http-equiv="Refresh" content="20; url='mainpage.php'" />
+        <meta http-equiv="Refresh" content="200; url='mainpage.php'" />
         
     </body>
 </html>

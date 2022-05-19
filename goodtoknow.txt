@@ -1,3 +1,0 @@
-good to know
-php -S localhost:9000
- sqlite3 restDB.db < restall.sql

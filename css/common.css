@@ -1,61 +1,239 @@
+* {
+  padding: 0em;
+  margin: 0em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.header {
+  width: 100%; 
+  left: 0;
+  top: 0;
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #247B7B;
+}
+
+#title {
+  padding-top: 10px;
+  font-size: 50px;
+  font-weight: 500;
+  display:inline-block;
+  vertical-align:top;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+  border: none;
+  margin: 30px 0;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  align-items: center;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background: linear-gradient(#247B7B, #0D5C63);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fffffa;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #fffffa;
+}
+
+.sidebar .closebar {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbar {
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  color: black;
+  width: 50px;
+  padding: 10px 15px;
+  border: none;
+  flex: 1;
+  text-align: right;
+}
+
+.openbar:hover {
+  background-color: #0D5C63;
+  color: #fffffa;
+}
+
+#buttonsidebar {
+  border: none;
+  color: black;
+  background-color: transparent;
+  position: absolute;
+  font-size: 30px;
+  line-height: 12px;
+  width: 18px;
+  margin-top: 1em;
+  margin-right: 1em;
+  top:0;
+  right:0;
+}
+
+#user {
+  display: inline-flex;
+}
+
+.username {
+  font-size: 25px;
+  padding-left: 1em;
+  padding-top: 0.5em;
+}
+
+.menu ul li{
+  padding: 0.5em;
+}
+
+.register {
+  position: absolute;
+  margin-top: 5em;
+  margin-left: 1em;
+  left: 0;
+  top:0;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
+.login {
+  position: absolute;
+  margin-top: 6em;
+  margin-left: 8em;
+  top:0;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
+.logout button {
+  position: absolute;
+  margin-top: 8em;
+  top:0;
+  border: none;
+  background-color: transparent;
+  color: black;
+}
+
 body {
-    font-family: "Lato", sans-serif;
-  }
-  
-  .sidebar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidebar .closebtn {
+  /*display: flex;*/
+}
+
+#main {
+  padding: 16px;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  height: 1em;
+  padding-bottom: 1em;
+  left: 0;
+  bottom: 0;
+  background-color: #0D5C63;
+  font-size: 15px;
+  padding-top: 5px;
+  text-align: center;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+/* Links organized */
+
+a:link, a:visited {
+  background-color: transparent;
+  color: black;
+  padding: 15px 25px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+@media only screen and (max-width:700px) {
+
+  .header a {
+    float: none;
+    box-sizing: border-box;
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    display: block;
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 1em;
   }
-  
-  .openbtn {
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #111;
-    color: white;
-    padding: 10px 15px;
+
+  .header-right {
+    float: none;
+  }
+
+  .openbar {
+    position: absolute;
+    display: block;
+    text-align: left;
+  }
+
+  .username {
+    font-size: 25px;
+    padding-left: 1em;
+    padding-top: 0.5em;
+  }
+
+  .menu ul li a{
+    font-size: 15px;
+    font-weight: 300;
+    padding: 1em;
+  }
+
+  .register {
+    position: absolute;
+    margin-top: 2em;
+    margin-left: 1em;
+    font-size: 1px;
+    left: 0;
+    top:0;
     border: none;
   }
   
-  .openbtn:hover {
-    background-color: #444;
+  .login {
+    position: absolute;
+    margin-top: 6em;
+    margin-left: 8em;
+    top:0;
+    border: none;
   }
-  
-  #main {
-    
-    padding: 16px;
+
+  .logout button {
+    position: absolute;
+    margin-top: 8em;
+    top:0;
+    border: none;
   }
-  
-  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-height: 450px) {
-    .sidebar {padding-top: 15px;}
-    .sidebar a {font-size: 18px;}
-  }
+}

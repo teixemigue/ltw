@@ -100,6 +100,26 @@ insert into Restaurant values(
     1
 );
 
+insert into Restaurant values(
+
+    2,
+    "sushi place",
+    "rua do sushi",
+    "photo",
+    "categoria",
+    2
+);
+
+insert into Restaurant values(
+
+    3,
+    "100 montaditos",
+    "rua do S. João",
+    "photo",
+    "categoria",
+    3
+);
+
 /* prato */
 insert into Dish values(
 

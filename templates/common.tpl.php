@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Let's Eat</title>
-    <link rel = "icon" href = "../photos/site/logo.png" type = "image/x-icon">
+    <title>Eats</title>
+    <link rel = "icon" href = "../photos/site/whitelogo.png" type = "image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
@@ -21,16 +21,9 @@
   <body>
 
     <header class="header">
-      <img src="photos/site/logo.png" class="logo">
-      <h1 id="title"><a href="/">Let's Eat</a></h1>
-      <?php 
-        if ($session->isLoggedIn())
-        {
-          drawLogoutForm($session);
-          drawSidebar($session);
-        } 
-        else drawLoginForm($session);
-      ?>
+      <img src="photos/site/whitelogo.png" class="logo">
+      <h1 class="title">Let's Eat</h1>
+      <h4 class="catch">Where hungry is a thing of the past!</h4>
     </header>
     <section id="messages">
       <?php foreach ($session->getMessages() as $messsage) { ?>
@@ -41,6 +34,14 @@
     </section>
   
     <main>
+    <?php 
+        if ($session->isLoggedIn())
+        {
+          drawLogoutForm($session);
+          drawSidebar($session);
+        } 
+        else drawLoginForm($session);
+    ?>
 <?php } ?>
 
 <?php function drawFooter() { ?>
@@ -56,11 +57,12 @@
 <?php } ?>
 
 <?php function drawLoginForm() { ?>
-  <form action="../actions/action_login.php" method="post">
-    <a href="../pages/register.php" class="register">Register</a>
-    <br>
+  <a href="../pages/register.php" class="register">Register</a> 
+  <form action="../actions/action_login.php" method="post" enctype="multipart/form-data">
     <div class="login">
+      <label for="Username">Username</label>
       <input type="text" name="username" placeholder="username">
+      <label for="Password">Password</label>
       <input type="password" name="password" placeholder="password">
       <button type="submit">Login</button>
     </div>

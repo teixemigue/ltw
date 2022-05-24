@@ -6,14 +6,14 @@
 
 <?php function drawRestaurants(array $restaurants) { ?>
   <header>
-    <h2>Restaurants</h2>
+    <h2 class="rests">Restaurants</h2>
     <input id="searchrestaurants" type="text" placeholder="search">
   </header>
   <section id="restaurants">
     <?php foreach($restaurants as $restaurant) { ?> 
-      <article>
-        <img src="https://picsum.photos/200?<?=$restaurant->id?>">
-        <a href="../pages/restaurant.php?id=<?=$restaurant->id?>"><?=$restaurant->name?></a>
+      <article class="places">
+        <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+        <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
       </article>
     <?php } ?>
   </section>
@@ -21,14 +21,18 @@
 
 
 <?php function drawRestaurant(Restaurant $restaurant, array $dishes) { ?>
-  <h2><?=$restaurant->name?></h2>
+  <h2 class="drawrest"><?=$restaurant->name?></h2>
   <section id="dishes">
     <?php foreach ($dishes as $dish) { ?>
     <article>
-      <img src="https://picsum.photos/200?<?=$dish->id?>">
-      <p class="name"><?=$dish->name?></p>
-      <p class="description"><?=$dish->description?></p>
-      <p class="price"><?=$dish->price?> &euro;</p>
+      <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
+      <div class="dishinfo">
+        <a class="name">Name: <?=$dish->name?></a>
+        <br>
+        <a class="description">Description: <?=$dish->description?></a>
+        <br>
+        <a class="price">Price: <?=$dish->price?> &euro;</a>
+      </div>
     </article>
     <?php } ?>
   </section>

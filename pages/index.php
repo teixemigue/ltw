@@ -11,10 +11,19 @@
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
   $db = getDatabaseConnection();
+  if($_GET['search'] != null)
+    $restaurants = Restaurant::getRestaurantsWithName($db, $_GET['search']);
+  else {
+    if($_GET['category'] != null)
+      $restaurants = Restaurant::getRestaurantsByCategory($db, $_GET['category']);
+    else
+      $restaurants = Restaurant::getRestaurants($db);
+  }
 
-  $restaurants = Restaurant::getRestaurants($db);
+  $categories = Restaurant::getRestaurantCategories($db);
 
   drawHeader($session);
+  drawCategories($categories);
   drawRestaurants($restaurants);
   drawFooter();
 ?>

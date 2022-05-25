@@ -16,13 +16,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="javascript/script.js" defer></script>
   </head>
   <body>
 
     <header class="header">
-      <img src="photos/site/whitelogo.png" class="logo">
-      <h1 class="title">Let's Eat</h1>
+      <img src="../photos/site/whitelogo.png" class="logo">
+      <h1 class="title"><a href="../pages/index.php">Let's Eat</a></h1>
       <h4 class="catch">Where hungry is a thing of the past!</h4>
     </header>
     <section id="messages">

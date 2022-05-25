@@ -84,7 +84,7 @@ insert into User values (
     "feup",
     "tester@gmail.com",
     "935768549",
-    "photos\default.png",
+    "/../photos/user/default.jpg",
     "tester"
     
 );
@@ -96,7 +96,7 @@ insert into Restaurant values(
     "pizaplex",
     "rua da pizza",
     "photo",
-    "categoria",
+    "Italian",
     1
 );
 
@@ -106,8 +106,8 @@ insert into Restaurant values(
     "sushi place",
     "rua do sushi",
     "photo",
-    "categoria",
-    2
+    "Japanese",
+    1
 );
 
 insert into Restaurant values(
@@ -116,8 +116,8 @@ insert into Restaurant values(
     "100 montaditos",
     "rua do S. João",
     "photo",
-    "categoria",
-    3
+    "Traditional",
+    1
 );
 
 /* prato */

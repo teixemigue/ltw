@@ -18,6 +18,22 @@
       $this->owner = $owner;
     }
 
+    static function getRestaurantCategories(PDO $db) : array {
+      $stmt = $db->prepare('
+          SELECT DISTINCT category
+          FROM Restaurant
+        ');
+      $stmt->execute();
+
+      $categories = array();
+
+      while($category = $stmt->fetch()) {
+        $categories[] = $category['category'];
+      }
+
+      return $categories;
+    }
+
     static function getRestaurants(PDO $db) : array {
         $stmt = $db->prepare('
           SELECT idRestaurant, name, address, photo, category, idOwner
@@ -40,7 +56,55 @@
           return $restaurants;
 
       }
+    
+    static function getRestaurantsByCategory(PDO $db, string $category) : array {
+      $stmt = $db->prepare('
+        SELECT idRestaurant, name, address, photo, category, idOwner
+        FROM Restaurant
+        WHERE category = ?
+      ');
+      $stmt->execute(array($category));
+    
+      $restaurants = array();
+        
+      while ($restaurant = $stmt->fetch()) {
+          $restaurants[] = new Restaurant(
+            intval($restaurant['idRestaurant']), 
+            $restaurant['name'],
+            $restaurant['address'],
+            $restaurant['photo'],
+            $restaurant['category'],
+            intval($restaurant['idOwner'])
+          );
+        }
+      return $restaurants;
+    }
 
+    static function getRestaurantsWithName(PDO $db, string $name) : array {
+      $stmt = $db->prepare('
+        SELECT idRestaurant, name, address, photo, category, idOwner
+        FROM Restaurant
+      ');
+
+      $stmt->execute();
+
+      $restaurants = array();
+
+      while($restaurant = $stmt->fetch()) {
+        if(strpos(strtolower($restaurant['name']), strtolower($name)) !== false) {
+          $restaurants[] = new Restaurant(
+            intval($restaurant['idRestaurant']), 
+            $restaurant['name'],
+            $restaurant['address'],
+            $restaurant['photo'],
+            $restaurant['category'],
+            intval($restaurant['idOwner'])
+          );
+        }
+      }
+
+      return $restaurants;
+    }
     static function getOwnerRestaurants(PDO $db, int $id) : array {
       $stmt = $db->prepare('
         SELECT idRestaurant, name, address, photo, category, idOwner

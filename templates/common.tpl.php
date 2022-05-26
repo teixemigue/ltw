@@ -50,7 +50,7 @@
 
     <footer>
       <div>
-        <h3 id="foot">Let's Eat &copy; 2022</h3>
+        <h3 id="foot">Let's Eat &copy; <?php echo date("Y");?></h3>
       </div>
     </footer>
   </body>

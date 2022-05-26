@@ -29,6 +29,18 @@
       return isset($_SESSION['name']) ? $_SESSION['name'] : null;
     }
 
+    public function isCustomer() : bool {
+      return isset($_SESSION['usertype']) ? 
+        strcmp($_SESSION['usertype'], "customer") === 0 || strcmp($_SESSION['usertype'], "tester") === 0 : 
+        false;
+    }
+
+    public function isOwner() : bool {
+      return isset($_SESSION['usertype']) ? 
+        strcmp($_SESSION['usertype'], "owner") === 0 || strcmp($_SESSION['usertype'], "tester") === 0 : 
+        false;
+    }
+
     public function setImagePath(string $path) {
       $_SESSION['path'] = $path;
     }
@@ -39,6 +51,10 @@
 
     public function setName(string $name) {
       $_SESSION['name'] = $name;
+    }
+
+    public function setUserType(string $type) {
+      $_SESSION['usertype'] = $type;
     }
 
     public function addMessage(string $type, string $text) {

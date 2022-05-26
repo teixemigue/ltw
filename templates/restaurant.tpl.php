@@ -37,14 +37,7 @@
         <article class="places">
           <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <?php if($restaurant->avgscore == 0): ?>
-            <p style="color: black">No reviews yet</p>
-          <?php else: ?>
-            <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
-            <script>
-              document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
-            </script>
-          <?php endif; ?>
+          <?php drawReviewScore($restaurant) ?>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -54,6 +47,7 @@
 
 <?php function drawRestaurant(Restaurant $restaurant, array $dishes) { ?>
   <h2 class="drawrest"><?=$restaurant->name?></h2>
+  <?php drawReviewScore($restaurant) ?>
   <section id="dishes">
     <?php foreach ($dishes as $dish) { ?>
     <article>
@@ -68,4 +62,15 @@
     </article>
     <?php } ?>
   </section>
+<?php } ?>
+
+<?php function drawReviewScore(Restaurant $restaurant) { ?>
+  <?php if($restaurant->avgscore == 0): ?>
+    <p style="color: black">No reviews yet</p>
+  <?php else: ?>
+    <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
+    <script>
+      document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
+    </script>
+  <?php endif; ?>
 <?php } ?>

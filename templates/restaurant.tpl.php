@@ -4,20 +4,13 @@
   require_once(__DIR__ . '/../database/restaurant.class.php')
 ?>
 
-<?php function drawCategories(array $categories) { ?>
+<?php function drawSearchBar() { ?>
   <header>
-    <h2 class="rests">Restaurants</h2>
     <form id="searchform" action="../actions/action_search_restaurant.php" method="post" class="search">
       <input id="searchrestaurants" type="text" name="name" placeholder="Search" required>
       <button form="searchform" id="searchbutton" type="submit" formmethod="post"><i class="fa fa-search"></i></button>
     </form>
-  </header>
-  <section id="categories">
-    <?php foreach($categories as $category) { ?>
-      <a id="category" href= "../pages/index.php?category=<?=$category?>"><?=$category?></a>
-    <?php } ?>
-  </section>
-  <script>
+    <script>
     var input = document.getElementById("searchrestaurants");
     input.addEventListener("keypress", function(event) {
       if (event.key === "Enter") {
@@ -26,6 +19,16 @@
       }
     });
   </script>
+<?php } ?>
+
+<?php function drawCategories(array $categories) { ?>
+    <h2 class="rests">Restaurants</h2>
+  </header>
+  <section id="categories">
+    <?php foreach($categories as $category) { ?>
+      <a id="category" href= "../pages/index.php?category=<?=$category?>"><?=$category?></a>
+    <?php } ?>
+  </section>
 <?php } ?>
 
 <?php function drawRestaurants(array $restaurants) { ?>

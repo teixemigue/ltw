@@ -18,6 +18,10 @@
   </section>
 <?php } ?>
 
+<?php function drawUserReview(Review $review) { ?>
+    <p style="color: black">You have reviewed this restaurant with <?=$review->grade?></p>
+<?php } ?>
+
 <?php function drawReviews(array $reviews) { ?>
   <section id="reviews">
     <header>
@@ -38,11 +42,11 @@
   </section>
 <?php } ?>
 
-<?php function userHasReviewed(int $id, array $reviews) : bool {
+<?php function getUserReview(int $id, array $reviews) : ?Review {
     foreach($reviews as $review) {
         if(intval($review->user) === $id)
-            return true;
+            return $review;
     }
 
-    return false;
+    return null;
 } ?>

@@ -22,8 +22,13 @@
   drawHeader($session);
   drawRestaurant($restaurant, $dishes);
 
-  if(!userHasReviewed($session->getId(), $reviews) && ($session->getId() !== $restaurant->owner));
-    drawAddReview(intval($_GET['id']));
+  if($session->isLoggedIn()) {
+    $userreview = getUserReview($session->getId(), $reviews);
+    if(is_null($userreview) && ($session->getId() !== $restaurant->owner))
+      drawAddReview(intval($_GET['id']));
+    else
+      drawUserReview($userreview);
+  }
 
   drawReviews($reviews);
   drawFooter();

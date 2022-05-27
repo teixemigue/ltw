@@ -90,6 +90,17 @@
         <li><a href="#">Contact</a></li>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>
       </ul>
+    <h2>Shopping Cart</h2>
+    <section id="cart">
+      <table>
+        <thead>
+          <tr><th>Prod</th><th>Quant</th><th>Price</th><th>Total</th></tr>
+        </thead>
+        <tfoot>
+          <tr><th colspan="4">Total:</th><th>0</th></tr>
+        </tfoot>
+      </table>
+    </section>
 </div>
 </nav>
 

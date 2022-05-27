@@ -472,3 +472,12 @@ insert into Dish values(
     1
 );
 
+/* review */ 
+
+insert into Review values(
+    1,
+    4,
+    "13-02-2021",
+    1,
+    1
+);

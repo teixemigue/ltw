@@ -8,14 +8,16 @@
     public string $photo;
     public string $category;
     public int $owner;
+    public ?float $avgscore;
 
-    public function __construct(int $id, string $name, string $address, string $photo, string $category, int $owner) {
+    public function __construct(int $id, string $name, string $address, string $photo, string $category, int $owner, ?float $avgscore) {
       $this->id = $id;
       $this->name = $name;
       $this->address = $address;
       $this->photo = $photo;
       $this->category = $category;
       $this->owner = $owner;
+      $this->avgscore = $avgscore;
     }
 
     static function getRestaurantCategories(PDO $db) : array {
@@ -36,32 +38,35 @@
 
     static function getRestaurants(PDO $db) : array {
         $stmt = $db->prepare('
-          SELECT idRestaurant, name, address, photo, category, idOwner
-          FROM Restaurant
+          SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore
+          FROM Restaurant LEFT JOIN Review ON Restaurant.idRestaurant = Review.restaurant
+          GROUP BY idRestaurant
         ');
         $stmt->execute();
     
         $restaurants = array();
         
         while ($restaurant = $stmt->fetch()) {
-            $restaurants[] = new Restaurant(
-              intval($restaurant['idRestaurant']), 
-              $restaurant['name'],
-              $restaurant['address'],
-              $restaurant['photo'],
-              $restaurant['category'],
-              intval($restaurant['idOwner'])
-            );
-          }
+          $restaurants[] = new Restaurant(
+            intval($restaurant['idRestaurant']), 
+            $restaurant['name'],
+            $restaurant['address'],
+            $restaurant['photo'],
+            $restaurant['category'],
+            intval($restaurant['idOwner']),
+            floatval($restaurant['avgscore'])
+          );
+        }
           return $restaurants;
 
       }
     
     static function getRestaurantsByCategory(PDO $db, string $category) : array {
       $stmt = $db->prepare('
-        SELECT idRestaurant, name, address, photo, category, idOwner
-        FROM Restaurant
-        WHERE category = ?
+      SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore
+      FROM Restaurant LEFT JOIN Review ON Restaurant.idRestaurant = Review.restaurant
+      WHERE category = ?
+      GROUP BY idRestaurant
       ');
       $stmt->execute(array($category));
     
@@ -74,7 +79,8 @@
             $restaurant['address'],
             $restaurant['photo'],
             $restaurant['category'],
-            intval($restaurant['idOwner'])
+            intval($restaurant['idOwner']),
+            floatval($restaurant['avgscore'])
           );
         }
       return $restaurants;
@@ -82,8 +88,9 @@
 
     static function getRestaurantsWithName(PDO $db, string $name) : array {
       $stmt = $db->prepare('
-        SELECT idRestaurant, name, address, photo, category, idOwner
-        FROM Restaurant
+        SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore
+        FROM Restaurant LEFT JOIN Review ON Restaurant.idRestaurant = Review.restaurant
+        GROUP BY idRestaurant
       ');
 
       $stmt->execute();
@@ -98,13 +105,15 @@
             $restaurant['address'],
             $restaurant['photo'],
             $restaurant['category'],
-            intval($restaurant['idOwner'])
+            intval($restaurant['idOwner']),
+            floatval($restaurant['avgscore'])
           );
         }
       }
 
       return $restaurants;
     }
+    /*
     static function getOwnerRestaurants(PDO $db, int $id) : array {
       $stmt = $db->prepare('
         SELECT idRestaurant, name, address, photo, category, idOwner
@@ -129,12 +138,13 @@
   
       return $restaurants;
     }
-
+    */
     static function getRestaurant(PDO $db, int $id) : Restaurant {
       $stmt = $db->prepare('
-        SELECT idRestaurant, name, address, photo, category, idOwner
-        FROM Restaurant
+        SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore
+        FROM Restaurant LEFT JOIN Review ON Restaurant.idRestaurant = Review.restaurant
         WHERE idRestaurant = ?
+        GROUP BY idRestaurant
       ');
       $stmt->execute(array($id));
   
@@ -146,8 +156,9 @@
         $restaurant['address'],
         $restaurant['photo'],
         $restaurant['category'],
-        intval($restaurant['idOwner'])
+        intval($restaurant['idOwner']),
+        floatval($restaurant['avgscore'])
       );
     }
-}
+  }
 ?>

@@ -14,6 +14,7 @@
   $session->setId($user->id);
   $session->setName($user->name);
   $session->setImagePath($user->photo);
+  $session->setUserType($user->type);
   $session->addMessage('success', 'Registration successful!');
 
   header('Location: ' . $_SERVER['HTTP_REFERER']);

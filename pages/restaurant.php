@@ -11,13 +11,25 @@
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  require_once(__DIR__ . '/../templates/review.tpl.php');
 
   $db = getDatabaseConnection();
 
   $restaurant = Restaurant::getRestaurant($db, intval($_GET['id']));
   $dishes = Dish::getRestaurantDishes($db, intval($_GET['id']));
+  $reviews = Review::getReviewsFromRestaurant($db, intval($_GET['id']));
 
   drawHeader($session);
   drawRestaurant($restaurant, $dishes);
+
+  if($session->isLoggedIn()) {
+    $userreview = getUserReview($session->getId(), $reviews);
+    if(is_null($userreview) && ($session->getId() !== $restaurant->owner))
+      drawAddReview(intval($_GET['id']));
+    else
+      drawUserReview($userreview);
+  }
+
+  drawReviews($reviews);
   drawFooter();
 ?>

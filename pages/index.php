@@ -23,6 +23,7 @@
   $categories = Restaurant::getRestaurantCategories($db);
 
   drawHeader($session);
+  drawSearchBar();
   drawCategories($categories);
   drawRestaurants($restaurants);
   drawFooter();

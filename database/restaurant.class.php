@@ -55,11 +55,21 @@
       $stmt->execute(array($data['name'], $data['address'], $photopath, $data['category'], $ownerId));
     }
 
+    static function removeRestaurant(PDO $db, int $id) {
+      $stmt = $db->prepare('
+        DELETE FROM Restaurant
+        WHERE idRestaurant = ?
+      ');
+
+      $stmt->execute(array($id));
+    }
+
     static function getRestaurantCategories(PDO $db) : array {
       $stmt = $db->prepare('
           SELECT DISTINCT category
           FROM Restaurant
         ');
+
       $stmt->execute();
 
       $categories = array();

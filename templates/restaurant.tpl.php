@@ -70,6 +70,7 @@
           <?php drawReviewScore($restaurant) ?>
           <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
           <a href="#">Edit Restaurant Dishes</a>
+          <button><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
         </article>
       <?php } ?>
     <?php endif; ?>

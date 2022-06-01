@@ -52,14 +52,21 @@
   <?php drawReviewScore($restaurant) ?>
   <section id="dishes">
     <?php foreach ($dishes as $dish) { ?>
-    <article>
+    <article data-id = "<?=$dish->id?>">
       <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
       <div class="dishinfo">
-        <a class="name">Name: <?=$dish->name?></a>
+        <span>Name: </span>
+        <a class="dishname"><?=$dish->name?></a>
         <br>
+        <p>Description: </p>
         <a class="description">Description: <?=$dish->description?></a>
         <br>
-        <a class="price">Price: <?=$dish->price?> &euro;</a>
+        <span>Price: </span>
+        
+        <a class="price"><?=$dish->price?></a>
+        <span>&euro;</span>
+        <input class="quantity" type="number" value="1">
+        <button class="order">Order</button>
       </div>
     </article>
     <?php } ?>

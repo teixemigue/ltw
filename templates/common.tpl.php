@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="javascript/script.js" defer></script>
+    <script src="../javascript/buyscript.js" defer></script>
   </head>
   <body>
 
@@ -92,6 +92,17 @@
         <li><a href="#">&#128722;</a></li>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>
       </ul>
+    <h2>Shopping Cart</h2>
+    <section id="cart">
+      <table>
+        <thead>
+          <tr><th>Prod</th><th>Quant</th><th>Price</th><th>Total</th></tr>
+        </thead>
+        <tfoot>
+          <tr><th colspan="4">Total:</th><th>0</th></tr>
+        </tfoot>
+      </table>
+    </section>
 </div>
 </nav>
 

@@ -20,6 +20,41 @@
       $this->avgscore = $avgscore;
     }
 
+    function save($db, $photo) {
+      if(!empty($photo))
+        $this->photo = self::uploadPhoto($photo, $this->name);
+      
+      $stmt = $db->prepare('
+        UPDATE Restaurant SET name = ?, address = ?, photo = ?, category = ?
+        WHERE idRestaurant = ?
+      ');
+
+      $stmt->execute(array($this->name, $this->address, $this->photo, $this->category, $this->id));
+      
+    }
+
+    static function uploadPhoto(string $photo, string $name) : string {
+      $path = "/../photos/user/$name.jpg";
+
+      unlink(__DIR__ . $path);
+      move_uploaded_file($photo, __DIR__ . $path);
+
+      return $path;
+    }
+
+    static function addRestaurant(PDO $db, array $data, int $ownerId, string $photo) {
+      if(!empty($photo))
+        $photopath = self::uploadPhoto($photo, $data['name']);
+      else
+        $photopath = "/../photos/user/default.jpg";
+
+      $stmt = $db->prepare('
+        INSERT INTO Restaurant VALUES (NULL, ?, ?, ?, ?, ?)
+      ');
+
+      $stmt->execute(array($data['name'], $data['address'], $photopath, $data['category'], $ownerId));
+    }
+
     static function getRestaurantCategories(PDO $db) : array {
       $stmt = $db->prepare('
           SELECT DISTINCT category

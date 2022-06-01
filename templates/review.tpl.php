@@ -18,7 +18,7 @@
   </section>
 <?php } ?>
 
-<?php function drawUserReview(Review $review) { ?>
+<?php function drawUserReview(?Review $review) { ?>
     <p style="color: black">You have reviewed this restaurant with <?=$review->grade?></p>
 <?php } ?>
 
@@ -40,6 +40,17 @@
       <?php } ?>
     <?php endif; ?>
   </section>
+<?php } ?>
+
+<?php function drawReviewScore(Restaurant $restaurant) { ?>
+  <?php if($restaurant->avgscore == 0): ?>
+    <p style="color: black">No reviews yet</p>
+  <?php else: ?>
+    <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
+    <script>
+      document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
+    </script>
+  <?php endif; ?>
 <?php } ?>
 
 <?php function getUserReview(int $id, array $reviews) : ?Review {

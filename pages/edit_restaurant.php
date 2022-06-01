@@ -4,19 +4,19 @@
   require_once(__DIR__ . '/../utils/session.php');
   $session = new Session();
 
-  require_once(__DIR__ . '/../database/connection.db.php');
+  if (!$session->isLoggedIn()) die(header('Location: /'));
 
+  require_once(__DIR__ . '/../database/connection.db.php');
   require_once(__DIR__ . '/../database/restaurant.class.php');
-  require_once(__DIR__ . '/../database/dish.class.php');
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
-  require_once(__DIR__ . '/../templates/review.tpl.php');
 
   $db = getDatabaseConnection();
 
-  $restaurants = Restaurant::getOwnerRestaurants($db, $session->getId());
+  $restaurant = Restaurant::getRestaurant($db, intval($_GET['id']));
+
   drawHeader($session);
-  drawRestaurants($restaurants);
+  drawRestaurantForm($restaurant);
   drawFooter();
-  ?>
+?>

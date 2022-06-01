@@ -20,7 +20,6 @@
     <script src="../javascript/buyscript.js" defer></script>
   </head>
   <body>
-
     <header class="header">
       <img src="../photos/site/whitelogo.png" class="logo">
       <h1 class="title"><a href="../pages/index.php">Let's Eat</a></h1>
@@ -76,6 +75,23 @@
   </form>
 <?php } ?>
 
+<?php function drawSearchBar() { ?>
+  <header>
+    <form id="searchform" action="../actions/action_search_restaurant.php" method="post" class="search">
+      <input id="searchrestaurants" type="text" name="name" placeholder="Search" required>
+      <button form="searchform" id="searchbutton" type="submit" formmethod="post"><i class="fa fa-search"></i></button>
+    </form>
+    <script>
+    var input = document.getElementById("searchrestaurants");
+    input.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        document.getElementById("searchbutton").click();
+      }
+    });
+  </script>
+<?php } ?>
+
 <?php function drawSidebar(Session $session) { ?>
   <div id="mySidebar" class="sidebar">
     <nav class="menu">
@@ -84,10 +100,10 @@
           <img class="userphoto" src=<?=$session->getImagePath()?> alt="Profile picture" width=50 height=50>
           <p class ="username"><?=$session->getName()?> </p>
         </li>
-        <li><a href="../pages/profile.php">Edit Profile</a></li>
-        <li><a href="../pages/orders.php">Orders</a></li>
+        <li><a href="../pages/profile.php">Profile</a></li>
+        <li><a href="#">Orders</a></li>
         <?php if($session->isOwner()): ?>
-          <li><a href="../pages/restaurants.php">Restaurants</a></li>
+          <li><a href="../pages/owner_restaurants.php">Restaurants</a></li>
         <?php endif; ?>
         <li><a href="#">&#128722;</a></li>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>

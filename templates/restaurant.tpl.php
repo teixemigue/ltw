@@ -1,27 +1,11 @@
 <?php 
   declare(strict_types = 1); 
 
-  require_once(__DIR__ . '/../database/restaurant.class.php')
+  require_once(__DIR__ . '/../database/restaurant.class.php');
+  require_once(__DIR__ . '/../templates/review.tpl.php');
 ?>
 
-<?php function drawSearchBar() { ?>
-  <header>
-    <form id="searchform" action="../actions/action_search_restaurant.php" method="post" class="search">
-      <input id="searchrestaurants" type="text" name="name" placeholder="Search" required>
-      <button form="searchform" id="searchbutton" type="submit" formmethod="post"><i class="fa fa-search"></i></button>
-    </form>
-    <script>
-    var input = document.getElementById("searchrestaurants");
-    input.addEventListener("keypress", function(event) {
-      if (event.key === "Enter") {
-        event.preventDefault();
-        document.getElementById("searchbutton").click();
-      }
-    });
-  </script>
-<?php } ?>
-
-<?php function drawCategories(array $categories) { ?>
+<?php function drawRestaurantCategories(array $categories) { ?>
     <h2 class="rests">Restaurants</h2>
   </header>
   <section id="categories">
@@ -73,13 +57,50 @@
   </section>
 <?php } ?>
 
-<?php function drawReviewScore(Restaurant $restaurant) { ?>
-  <?php if($restaurant->avgscore == 0): ?>
-    <p style="color: black">No reviews yet</p>
-  <?php else: ?>
-    <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
-    <script>
-      document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
-    </script>
-  <?php endif; ?>
+<?php function drawOwnerRestaurants(array $restaurants) { ?>
+  <h2 style="color: black">Restaurant List</h2>
+  <section id="restaurants">
+    <?php if(empty($restaurants)): ?>
+      <p style="color: black">You haven't added any restaurants</p>
+    <?php else: ?>
+      <?php foreach($restaurants as $restaurant) { ?> 
+        <article class="places">
+          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
+          <?php drawReviewScore($restaurant) ?>
+          <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
+          <a href="#">Edit Restaurant Dishes</a>
+        </article>
+      <?php } ?>
+    <?php endif; ?>
+  </section>
+  <button><a href="../pages/register_restaurant.php">Add Restaurant</a></button>
+<?php } ?>
+
+<?php function drawRestaurantForm(Restaurant $restaurant) { ?>
+  <h2 style="color: black" >Restaurant Info</h2>
+  <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="restaurant" enctype="multipart/form-data">
+
+    <label style="color: black" for="photo">Photo:</label>
+    <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
+
+    <label style="color: black" for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<?=$restaurant->name?>">
+    
+    <label style="color: black" for="address">Address:</label>
+    <input id="address" type="text" name="address" value="<?=$restaurant->address?>"> 
+    
+    <label style="color: black" for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
+        <option value="Italian">Italian</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Traditional">Traditional</option>
+        <option value="American">American</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Other">Other</option>
+      </select>
+    <button type="submit">Save</button>
+  </form>
 <?php } ?>

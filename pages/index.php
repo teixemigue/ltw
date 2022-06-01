@@ -24,7 +24,7 @@
 
   drawHeader($session);
   drawSearchBar();
-  drawCategories($categories);
+  drawRestaurantCategories($categories);
   drawRestaurants($restaurants);
   drawFooter();
 ?>

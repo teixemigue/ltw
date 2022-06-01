@@ -35,7 +35,7 @@ function attachBuyEvents() {
     priceCell.textContent = price
   
     const totalCell = document.createElement('td')
-    totalCell.textContent = (price * quantity)
+    totalCell.textContent = (price * quantity).toFixed(2)
   
     const deleteCell = document.createElement('td')
     deleteCell.classList.add('delete')

@@ -85,9 +85,11 @@
           <p class ="username"><?=$session->getName()?> </p>
         </li>
         <li><a href="../pages/profile.php">Edit Profile</a></li>
-        <li><a href="#">Clients</a></li>
+        <li><a href="../pages/orders.php">Orders</a></li>
+        <?php if($session->isOwner()): ?>
+          <li><a href="../pages/restaurants.php">Restaurants</a></li>
+        <?php endif; ?>
         <li><a href="#">&#128722;</a></li>
-        <li><a href="#">Contact</a></li>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>
       </ul>
 </div>

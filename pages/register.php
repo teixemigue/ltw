@@ -9,6 +9,6 @@
 
 
   drawHeader($session);
-  drawRegisterForm();
+  drawUserRegisterForm();
   drawFooter();
 ?>

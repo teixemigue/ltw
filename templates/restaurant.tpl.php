@@ -45,7 +45,6 @@
       <?php } ?>
     <?php endif; ?>
   </section>
-
 <?php } ?>
 
 <?php function drawRestaurant(Restaurant $restaurant, array $dishes) { ?>

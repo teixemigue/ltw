@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1); ?>
 
-<?php function drawRegisterForm() { ?>
+<?php function drawUserRegisterForm() { ?>
 <h2>Register User</h2>
 <form action="../actions/action_register_user.php" method="post" class="profile" enctype="multipart/form-data">
   <div>

@@ -113,14 +113,15 @@
 
       return $restaurants;
     }
-    /*
+    
     static function getOwnerRestaurants(PDO $db, int $id) : array {
       $stmt = $db->prepare('
-        SELECT idRestaurant, name, address, photo, category, idOwner
-        FROM Restaurant
-        WHERE idOwner = ?
-        GROUP BY idRestaurant
+      SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore
+      FROM Restaurant LEFT JOIN Review ON Restaurant.idRestaurant = Review.restaurant
+      WHERE idOwner = ?
+      GROUP BY idRestaurant
       ');
+      
       $stmt->execute(array($id));
   
       $restaurants = array();
@@ -132,13 +133,14 @@
           $restaurant['address'],
           $restaurant['photo'],
           $restaurant['category'],
-          intval($restaurant['idOwner'])
+          intval($restaurant['idOwner']),
+          floatval($restaurant['avgscore'])
         );
       }
   
       return $restaurants;
     }
-    */
+    
     static function getRestaurant(PDO $db, int $id) : Restaurant {
       $stmt = $db->prepare('
         SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore

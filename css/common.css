@@ -57,7 +57,7 @@ header h1 a:hover{
 .sidebar {
   height: 100%;
   width: 0;
-  position: fixed;
+  position: absolute;
   align-items: center;
   z-index: 1;
   top: 0;
@@ -67,6 +67,7 @@ header h1 a:hover{
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  
 }
 
 .sidebar a {

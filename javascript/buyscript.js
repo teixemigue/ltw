@@ -23,18 +23,23 @@ function attachBuyEvents() {
     row.setAttribute('data-id', id)
   
     const idCell = document.createElement('td')
+    idCell.classList.add('iddish')
     idCell.textContent = id
   
     const nameCell = document.createElement('td')
+    nameCell.classList.add('namedish')
     nameCell.textContent = name
   
     const quantityCell = document.createElement('td')
+    quantityCell.classList.add('quantitydish')
     quantityCell.textContent = quantity
   
     const priceCell = document.createElement('td')
+    priceCell.classList.add('pricedish')
     priceCell.textContent = price
   
     const totalCell = document.createElement('td')
+    totalCell.classList.add('totalcelldish')
     totalCell.textContent = (price * quantity).toFixed(2)
   
     const deleteCell = document.createElement('td')

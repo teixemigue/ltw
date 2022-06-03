@@ -36,9 +36,9 @@
   <?php drawReviewScore($restaurant) ?>
   <section id="dishes">
     <?php foreach ($dishes as $dish) { ?>
-    <article data-id = "<?=$dish->id?>">
+    <article data-id = "<?=$dish->id?>" class="dishinfo">
       <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
-      <div class="dishinfo">
+      
         <span>Name: </span>
         <a class="dishname"><?=$dish->name?></a>
         <br>
@@ -51,7 +51,7 @@
         <span>&euro;</span>
         <input class="quantity" type="number" value="1">
         <button class="order">Order</button>
-      </div>
+      
     </article>
     <?php } ?>
   </section>

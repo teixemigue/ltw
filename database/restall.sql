@@ -124,7 +124,7 @@ insert into Restaurant values(
 insert into Dish values(
 
     1,
-    "pizza",
+    "novo prato",
     12.30,
     "photos\img.jpg",
     "E muito bom",

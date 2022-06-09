@@ -1,0 +1,95 @@
+/* SIDEBAR BEGINS */
+
+#main {
+    display: grid;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    display: grid;
+    position: fixed;
+    align-items: center;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #31525B;
+    color: #FFFFFA;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FFFFFA;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #FFFFFA;
+}
+
+.sidebar .closebar {
+    position: absolute;
+    top: 0;
+    color: #FFFFFA;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.openbar {
+    font-size: 20px;
+    cursor: pointer;
+    color: #FFFFFA;
+    border: none;
+    flex: 1;
+}
+
+.openbar:hover {
+    color: #FFFFFA;
+}
+
+#buttonsidebar {
+    background-color: transparent;
+    position: absolute;
+    font-size: 25px;
+    padding: 1em 2em 1em 2em;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+#user {
+    display: inline-flex;
+}
+
+.username {
+    font-size: 25px;
+    padding-left: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    color: #FFFFFA;
+}
+
+.userphoto {
+    padding-left: 2em;
+}
+
+.menu ul li{
+    padding: 0.5em;
+}
+
+.menu ul li a{
+color: #FFFFFA;
+}
+
+.menu ul li a:hover{
+    color: #89E4F2;
+}
+
+/* SIDEBAR ENDS */

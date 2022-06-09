@@ -6,7 +6,6 @@
 
 html {
   /*background: linear-gradient(to right, #31525B, #4d8291, #89e4f2);*/
-  color: #FFFFFA;
   /*background: linear-gradient(to right, #FFA101, #FAE6B1);*/
 }
 
@@ -14,6 +13,7 @@ html {
 
 .header {
   background-color: #31525B;
+  color: #FFFFFA;
   width: 100%; 
   left: 0;
   top: 0;
@@ -32,28 +32,38 @@ html {
   padding-left: 1em;
 }
 
-.title {
+header h1 a{
+  color:#FFFFFA;
+}
+
+.pagetitle {
   color: #FFFFFA;
   font-size: 60px;
   font-weight: 500;
-  padding-left: 0.4em;
+  padding-left: 0em;
   top: 0;
   left: 0;
+  padding-left: 0.5em;
   display:inline-block;
 }
 
 .catch {
-  font-size: 18px;
+  color: #FFFFFA;
+  font-size: 15px;
   font-weight: 200;
-  padding-left: 6em;
+  top: 0;
+  left: 0;
+  padding-left: 9em;
+  display: flexbox;
 }
 
 header h1 a:hover{
   color: #FFFFFA;
 }
 
-/* SIDEBAR BEGINS */
+/* restaurant types begin */
 
+<<<<<<< Updated upstream
 .sidebar {
   height: 100%;
   width: 0;
@@ -72,76 +82,33 @@ header h1 a:hover{
 
 .sidebar a {
   padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #ebebec;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidebar a:hover {
-  color: #ebebec;
-}
-
-.sidebar .closebar {
-  position: absolute;
-  top: 0;
-  color: #ebebec;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbar {
-  font-size: 20px;
-  cursor: pointer;
-  color: #FFFFFA;
+=======
+.searchrestaurants {
+  background-color: #04AA6D;
   border: none;
-  flex: 1;
-}
-
-.openbar:hover {
-  color: #fffffa;
-}
-
-#buttonsidebar {
-  background-color: transparent;
-  position: absolute;
-  font-size: 25px;
-  padding: 1em 2em 1em 2em;
-  top: 0;
-  right: 0;
+  color: white;
+  padding: 20px;
   text-align: center;
+>>>>>>> Stashed changes
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 
-#user {
-  display: inline-flex;
+.searchform {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 
-.username {
-  font-size: 25px;
-  padding-left: 1em;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-  color: #FFFFFA;
-}
-.userphoto {
-  padding-left: 2em;
-}
-
-.menu ul li{
-  padding: 0.5em;
-}
-
-.menu ul li a{
-  color: #FFFFFA;
-}
-
-.menu ul li a:hover{
-  color: #89E4F2;
-}
-
-/* SIDEBAR ENDS */
+/* restaurant type ends */
 
 .register {
   position: absolute;
@@ -180,129 +147,6 @@ header h1 a:hover{
 
 /* HEADER ENDS */
 
-/* REGISTER PAGE */
-
-.profile {
-  color: #000000;
-  display: block;
-}
-
-/* REGISTER PAGE ENDS*/
-
-/* DRAW RESTAURANTS */
-
-.rests {
-  color: #000000;
-  padding-top: 0.5em;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-#searchrestaurants {
-  width: 10%;
-  top: 11em;
-  right: 1em;
-  box-sizing: border-box;
-  position: absolute;
-}
-
-.restaurants {
-  color: #000000;
-  font-size: 400;
-  display: block;
-}
-
-.restphoto {
-  top: 5em;
-  left: 1em;
-  border-top: 1em;
-  border-bottom: 1em;
-  border-right: 10em;
-  border-left: 1em;
-  border-color: #89E4F2;
-  cursor: pointer;
-}
-
-.restname {
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: capitalize;
-  vertical-align: top;
-  cursor: pointer;
-}
-
-.places{
-  color: #000000;
-  padding-top: 0.5em;
-  padding-bottom: 1em;
-  padding-left: 1em;
-  font-size: 30px;
-  font-weight: 500;
-}
-
-/* DRAW ENDS */
-
-/* RESTAURANT PAGE STARTS*/
-
-.drawrest {
-  color: #000000;
-  padding-bottom: 0.5em;
-  padding-left: 1em;
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: capitalize;
-}
-
-#dishes {
-  color: #000000;
-  font-size: 15px;
-  font-weight: 300;
-  box-sizing: border-box;
-}
-
-.dishphoto {
-  left: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-  padding-right: 1em;
-  padding-left: 3em;
-}
-
-.dishinfo {
-  color: #000000;
-  font-size: 25px;
-  font-weight: 400;
-  text-transform: capitalize;
-  vertical-align: top;
-  display: inline-block;
-  padding-top: 2em;
-  padding-left: 0.4em;
-  left: 0;
-  cursor: pointer;
-}
-
-.name {
-  color: #000000;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.description {
-  color: #000000;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-.price {
-  color: #000000;
-  font-size: 15px;
-  font-weight: 300;
-}
-
-/* RESTAURANT PAGE ENDS */
-
 #main {
   padding: 16px;
 }
@@ -324,8 +168,6 @@ footer {
 
 a:link, a:visited {
   background-color: transparent;
-  color: black;
-  padding: 15px 25px;
   text-decoration: none;
   display: inline-block;
 }
@@ -337,14 +179,39 @@ a:link, a:visited {
   .sidebar a {font-size: 18px;}
 }
 
-@media only screen and (max-width:700px) {
-  .header a {
-    float: none;
+@media only screen and (max-width: 450px) {
+  .header {
+    background-color: #31525B;
+    color: #FFFFFA;
+    width: 100%; 
+    left: 0;
+    top: 0;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
     box-sizing: border-box;
-    position: absolute;
-    display: block;
-    text-align: left;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 40px;
+    cursor: pointer;
+    border: none;
+    padding-top: 1.1em;
+    padding-left: 0.5em;
+  }
+
+  .pagetitle {
+    color: #FFFFFA;
+    font-size: 35px;
     font-weight: 500;
+    padding-left: 0.2em;
+  }
+
+  .catch {
+    font-size: 10px;
+    padding-left: 6em;
+    padding-top: 1em;
   }
 
   .header-right {
@@ -388,9 +255,10 @@ a:link, a:visited {
   }
 
   .logout button {
+    font-size: 13px;
     position: absolute;
-    margin-top: 8em;
-    top:0;
+    padding-top: 5.5em;
+    top: 0;
     border: none;
   }
 }

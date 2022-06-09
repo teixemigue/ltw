@@ -1,0 +1,58 @@
+/* RESTAURANT PAGE STARTS*/
+
+.drawrest {
+    color: #000000;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#dishes {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.dishphoto {
+    left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 3em;
+}
+
+.dishinfo {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 2em;
+    padding-left: 0.4em;
+    left: 0;
+    cursor: pointer;
+}
+
+.name {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.description {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+  
+.price {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+  
+/* RESTAURANT PAGE ENDS */

@@ -1,0 +1,65 @@
+/* DRAW RESTAURANTS */
+
+.rests {
+    color: #000000;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#searchrestaurants {
+    width: 10%;
+    top: 11em;
+    right: 1em;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.restaurants {
+    color: #000000;
+    font-size: 400;
+    display: block;
+}
+
+.restphoto {
+    top: 5em;
+    left: 1em;
+    border-top: 1em;
+    border-bottom: 1em;
+    border-right: 10em;
+    border-left: 1em;
+    border-color: #89E4F2;
+    cursor: pointer;
+}
+
+.restname {
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.places {
+    color: #000000;
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#categories {
+    background-color: #04AA6D;
+    border-radius: 1em;
+    color: white;
+    padding: 3em;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+/* DRAW ENDS */

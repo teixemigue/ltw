@@ -1,0 +1,98 @@
+#myreview {
+    color: #000000;
+    position: relative;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.reviewer {
+    color: #fefefe;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 0.5em;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    position: relative;
+    text-transform: capitalize;
+}
+
+#addreview form {
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+}
+
+#reviewform {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    padding: 1em 10em 1em 1em;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+#reviewform label {
+    color: #fefefe;
+    margin-left: 0.2em;
+}
+
+#grade {
+    align-items: center;
+    background-color:  #fefefe;
+    border: 1px solid transparent;
+    border-radius: 0.5em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    padding: 0.1em 2em 0.1em 1em;
+    margin-bottom: 1em;
+}
+
+#reviewbutton {
+    align-items: center;
+    background-color:  #fefefe;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: block;
+    font-size: 16px;
+    padding: 0.5em 1em 0.5em 1em;
+    text-align: center;
+}
+
+#reviews h2{
+    margin-top: 1em;
+}
+
+.review {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1.5em; 
+    padding: 1em 2em 1em 2em;
+}
+
+.review img {
+    width: 10em;
+}
+
+.review p {
+    margin: 0.5em 0em;
+}

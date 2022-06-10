@@ -8,9 +8,9 @@
 <?php function drawRestaurantCategories(array $categories) { ?>
     <h2 class="rests">Restaurants</h2>
   </header>
-  <section id="categories">
+  <section id="select">
     <?php foreach($categories as $category) { ?>
-      <a id="category" href= "../pages/index.php?category=<?=$category?>"><?=$category?></a>
+      <a id="categories" href= "../pages/index.php?category=<?=$category?>"><?=$category?></a>
     <?php } ?>
   </section>
 <?php } ?>
@@ -18,13 +18,13 @@
 <?php function drawRestaurants(array $restaurants) { ?>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
-      <p style="color: black">No restaurants found</p>
+      <p>No restaurants found</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <?php drawReviewScore($restaurant) ?>
+          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <a><?php drawReviewScore($restaurant) ?></a>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -32,75 +32,83 @@
 <?php } ?>
 
 <?php function drawRestaurant(Restaurant $restaurant, array $dishes) { ?>
-  <h2 class="drawrest"><?=$restaurant->name?></h2>
-  <?php drawReviewScore($restaurant) ?>
-  <section id="dishes">
+  <div id="drawrest">
+    <h2 class="rests"><?=$restaurant->name?></h2>
+    <div id="revscore">
+      <h4 id="score">Reviews Score: </h4>
+      <?php drawReviewScore($restaurant) ?>
+    </div>
+  </div>
+  <section class="dishreview">
     <?php foreach ($dishes as $dish) { ?>
     <article data-id = "<?=$dish->id?>" class="dishinfo">
       <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
-        <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
-        <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
-        <span>Name: </span>
+      <div class="infodish">
+        <b id="bolder">Name: </b>
         <a class="dishname"><?=$dish->name?></a>
         <br>
-        <a class="description">Description: <?=$dish->description?></a>
+        <b class="description">Description: </b>
+        <?=$dish->description?>
         <br>
-        <span>Price: </span>
-        
+        <b id="bolder">Price: </b>
         <a class="price"><?=$dish->price?></a>
         <span>&euro;</span>
-        <input class="quantity" type="number" value="1">
-        <button class="order">Order</button>
-      
+        <div class="orderdish">
+          <input class="quantity" type="number" value="1">
+          <button class="order">Order</button>
+        </div>
+      </div>
     </article>
     <?php } ?>
   </section>
 <?php } ?>
 
 <?php function drawOwnerRestaurants(array $restaurants) { ?>
-  <h2 style="color: black">Restaurant List</h2>
+  <h2 class="rests">Restaurant List</h2>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
-      <p style="color: black">You haven't added any restaurants</p>
+      <p id="restempty">You haven't added any restaurants</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <?php drawReviewScore($restaurant) ?>
-          <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
+          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <a class="restrev"><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
+          <a class="editrinfo" href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
+          <a class="editrdishes" href="#">Edit Restaurant Dishes</a>
           <button><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
         </article>
       <?php } ?>
     <?php endif; ?>
   </section>
-  <button><a href="../pages/register_restaurant.php">Add Restaurant</a></button>
+  <button class="addbutton"><a href="../pages/register_restaurant.php" id="adderrest">Add Restaurant</a></button>
 <?php } ?>
 
 <?php function drawRestaurantForm(Restaurant $restaurant) { ?>
-  <h2 style="color: black" >Restaurant Info</h2>
-  <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="restaurant" enctype="multipart/form-data">
+  <h2 class="rests">Restaurant Info</h2>
+  <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="profile" enctype="multipart/form-data">
 
-    <label style="color: black" for="photo">Photo:</label>
+    <label for="photo">Photo:</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
 
-    <label style="color: black" for="name">Name:</label>
+    <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<?=$restaurant->name?>">
     
-    <label style="color: black" for="address">Address:</label>
+    <label for="address">Address:</label>
     <input id="address" type="text" name="address" value="<?=$restaurant->address?>"> 
     
-    <label style="color: black" for="category">Category:</label>
-      <select id="category" name="category">
-        <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
-        <option value="Italian">Italian</option>
-        <option value="Japanese">Japanese</option>
-        <option value="Chinese">Chinese</option>
-        <option value="Traditional">Traditional</option>
-        <option value="American">American</option>
-        <option value="Mexican">Mexican</option>
-        <option value="Other">Other</option>
-      </select>
+    <label for="category">Category:</label>
+    <select id="addcategory" name="category">
+      <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
+      <option value="Italian">Italian</option>
+      <option value="Japanese">Japanese</option>
+      <option value="Chinese">Chinese</option>
+      <option value="Traditional">Traditional</option>
+      <option value="American">American</option>
+      <option value="Mexican">Mexican</option>
+      <option value="Other">Other</option>
+    </select>
+    <br>
     <button type="submit">Save</button>
   </form>
 <?php } ?>

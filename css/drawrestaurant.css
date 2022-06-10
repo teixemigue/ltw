@@ -1,65 +1,94 @@
 /* DRAW RESTAURANTS */
 
 .rests {
+    font-family: 'Satisfy', cursive;
     color: #000000;
-    padding-top: 0.5em;
+    position: relative;
+    padding-top: 0em;
     padding-bottom: 0.5em;
     padding-left: 1em;
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
-#searchrestaurants {
-    width: 10%;
-    top: 11em;
-    right: 1em;
-    box-sizing: border-box;
-    position: absolute;
+#categories {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 0.5em 1em 0.5em 1em;
 }
 
-.restaurants {
-    color: #000000;
-    font-size: 400;
-    display: block;
+#categories:first-child {
+    margin-left: 2em;
+}
+
+#restaurants {
+    align-items: center;
+    justify-content: center;
+}
+
+.places {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2em; 
+    padding: 1em 2em 1em 2em;
+}
+
+.places a:last-child {
+    font-size: 15px;
+    font-family: 200;
+    padding: 1em;
+}
+
+.restname {
+    color:#080808;
+    cursor: pointer;
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-left: 0.2em;
+    margin-top: 1em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.restname:visited {
+    color:#080808;
 }
 
 .restphoto {
-    top: 5em;
-    left: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border-top: 1em;
     border-bottom: 1em;
     border-right: 10em;
     border-left: 1em;
-    border-color: #89E4F2;
     cursor: pointer;
+    justify-content: center;
 }
 
-.restname {
-    font-size: 20px;
-    font-weight: 400;
-    text-transform: capitalize;
-    vertical-align: top;
-    cursor: pointer;
+#select {
+    position: relative;
 }
 
-.places {
-    color: #000000;
-    padding-top: 0.5em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    font-size: 30px;
-    font-weight: 500;
+#select select {
+    display: none;
 }
-
-#categories {
-    background-color: #04AA6D;
-    border-radius: 1em;
-    color: white;
-    padding: 3em;
-    text-align: center;
-    display: inline-block;
-    font-size: 16px;
-}
-
 
 /* DRAW ENDS */

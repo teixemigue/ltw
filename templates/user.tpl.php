@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1); ?>
 
 <?php function drawProfileForm(User $user) { ?>
-<h2>User Profile</h2>
+<h2 class="user">User Profile</h2>
 <form action="../actions/action_edit_profile.php" method="post" class="profile" enctype="multipart/form-data">
 
   <label for="photo">Photo:</label>
@@ -24,7 +24,7 @@
 
   <label for="phone">Phone number:</label>
   <input id="phone" type="text" name="phone" value="<?=$user->phone?>">
-  
+  <br>
   <button type="submit">Save</button>
 </form>
 <?php } ?>

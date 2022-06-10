@@ -1,0 +1,97 @@
+#drawrest {
+    display: inline-flex;
+}
+
+#revscore {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-flex;
+    font-size: 15px;
+    margin: 1em;
+    margin-left: 5em;
+    margin-top: 0em;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+#score {
+    margin-right: 0.5em;
+}
+
+.dishreview {
+    align-items: center;
+    justify-content: center;
+}
+
+.dishinfo {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2em; 
+    padding: 1em 2em 1em 2em;
+}
+
+.dishinfo:hover,
+.dishinfo:focus {
+  background-color:  #abac7f;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.dishinfo:active {
+  background-color:  #abac7f;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+}
+
+#dishphoto {
+    display: block;
+    border-top: 1em;
+    border-bottom: 1em;
+    border-right: 10em;
+    border-left: 1em;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.infodish {
+    font-size: 15px;
+    font-family: 200;
+    padding: 1em;
+}
+
+.orderdish {
+    display: block;
+}
+
+.quantity {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+    width: 4em;
+}
+
+.order {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    padding: 0.5em 1em 0.5em 1em;
+}

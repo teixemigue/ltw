@@ -12,7 +12,7 @@ html {
 /* HEADER BEGINS */
 
 .header {
-  background-color: #31525B;
+  background-color: #717744;
   color: #FFFFFA;
   width: 100%; 
   left: 0;
@@ -39,7 +39,7 @@ header h1 a{
 .pagetitle {
   color: #FFFFFA;
   font-size: 60px;
-  font-weight: 500;
+  font-weight: 400;
   padding-left: 0em;
   top: 0;
   left: 0;
@@ -47,7 +47,15 @@ header h1 a{
   display:inline-block;
 }
 
+.pagetitle:link {
+  color: #FFFFFA;
+  background-color: transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+
 .catch {
+  font-family: 'Satisfy', cursive;
   color: #FFFFFA;
   font-size: 15px;
   font-weight: 200;
@@ -63,50 +71,29 @@ header h1 a:hover{
 
 /* restaurant types begin */
 
-<<<<<<< Updated upstream
-.sidebar {
-  height: 100%;
-  width: 0;
-  position: absolute;
+#search input {
+  margin-right: 1em;
+}
+
+#searchbutton {
   align-items: center;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  background-color: #31525B;
-  color: #ebebec;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-=======
-.searchrestaurants {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
->>>>>>> Stashed changes
-  text-decoration: none;
+  background-color:  #abac7f;
+  border: 1px solid transparent;
+  border-radius: 1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: #373d20;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  padding: 0.5em 1em 0.5em 1em;
+  position: absolute;
+  right: 1em;
+  top: 9em;
 }
 
-.searchform {
-  background-color: #04AA6D;
-  border: none;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
+#searchbutton:first-child {
+  margin-right: 4em;
 }
+
 
 /* restaurant type ends */
 
@@ -152,8 +139,8 @@ header h1 a:hover{
 }
 
 footer {
-  background-color: #31525B;
-  color: #FFFFFA;
+  background-color: transparent;
+  color: #717744;
   width: 100%;
   height: 1em;
   padding-bottom: 1em;
@@ -181,8 +168,6 @@ a:link, a:visited {
 
 @media only screen and (max-width: 450px) {
   .header {
-    background-color: #31525B;
-    color: #FFFFFA;
     width: 100%; 
     left: 0;
     top: 0;
@@ -202,7 +187,6 @@ a:link, a:visited {
   }
 
   .pagetitle {
-    color: #FFFFFA;
     font-size: 35px;
     font-weight: 500;
     padding-left: 0.2em;

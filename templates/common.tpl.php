@@ -16,11 +16,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/addreviews.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/drawrestaurant.css">  
     <link rel="stylesheet" href="../css/register.css"> 
-    <link rel="stylesheet" href="../css/restaurantpages.css">  
+    <link rel="stylesheet" href="../css/restaurantinfo.css"> 
+    <link rel="stylesheet" href="../css/restaurantlist.css">
+    <link rel="stylesheet" href="../css/restaurantpages.css"> 
     <link rel="stylesheet" href="../css/sidebar.css">  
+    <link rel="stylesheet" href="../css/userprofile.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../javascript/buyscript.js" defer></script>
     <script src="../javascript/savecartscript.js" defer></script>
@@ -83,8 +90,8 @@
 
 <?php function drawSearchBar() { ?>
   <header>
-    <form id="searchform" action="../actions/action_search_restaurant.php" method="post" class="search">
-      <input id="searchrestaurants" type="text" name="name" placeholder="Search" required>
+    <form action="../actions/action_search_restaurant.php" method="post" class="search">
+      <input id="searchbutton" type="text" name="name" placeholder="Search" required>
       <button form="searchform" id="searchbutton" type="submit" formmethod="post"><i class="fa fa-search"></i></button>
     </form>
     <script>
@@ -114,19 +121,18 @@
         <li><a href="#">&#128722;</a></li>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>
       </ul>
-    <h2>Shopping Cart</h2>
-    <section id="cart">
-      <table id="carttable">
-        <thead>
-          <tr><th>Prod</th><th>Quant</th><th>Price</th><th>Total</th></tr>
-        </thead>
-        <tfoot>
-          <tr><th colspan="4">Total:</th><th>0</th></tr>
-        </tfoot>
-      </table>
-      
-    </section>
-    <a href="#">Checkout</a>
+      <li><a><h2>Shopping Cart</h2></a></li>
+        <section id="cart">
+          <table id="carttable">
+            <thead>
+              <tr><th>Prod</th><th>Quant</th><th>Price</th><th>Total</th></tr>
+            </thead>
+            <tfoot>
+              <tr><th colspan="4">Total:</th><th>0</th></tr>
+            </tfoot>
+          </table>
+      </section>
+      <a href="#">Checkout</a>
     </nav>      
     
   </div>

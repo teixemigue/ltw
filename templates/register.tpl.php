@@ -37,9 +37,9 @@
 <?php } ?>
 
 <?php function drawRestaurantRegisterForm() { ?>
-  <h2>Add Restaurant</h2>
+  <h2 class="rests">Add Restaurant</h2>
   <form action="../actions/action_add_restaurant.php" method="post" class="profile" enctype="multipart/form-data">
-    <div>
+
       <label for="photo">Photo:</label>
       <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
 
@@ -50,7 +50,7 @@
       <input id="address" type="text" name="address" placeholder="Address" required>
 
       <label for="category">Category:</label>
-      <select id="category" name="category" required>
+      <select id="addcategory" name="category" required>
         <option value="" selected disabled hidden>Choose a category</option>
         <option value="Italian">Italian</option>
         <option value="Japanese">Japanese</option>
@@ -60,7 +60,7 @@
         <option value="Mexican">Mexican</option>
         <option value="Other">Other</option>
       </select>
+      <br>
       <button type="submit">Register</button>
-    </div>
   </form>
 <?php } ?>

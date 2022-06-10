@@ -7,11 +7,11 @@
 <?php function drawAddReview(int $id) { ?>
   <section id="addreview">
     <header>
-    <h3 style="color: black">Add review</h3>
-    <p style="color: black">You haven't reviewed this restaurant yet</p>
+      <p id="myreview">You haven't reviewed this restaurant yet</p>
     </header>
     <form id="reviewform" action="../actions/action_add_review.php?id=<?=$id?>" method="post">
-        <label for="grade" style="color: black">Grade:</label>
+        <p class="reviewer">Add review</p>
+        <label for="grade">Grade: </label>
         <input id="grade" type="number" name="grade" placeholder="Choose from 1 to 5" min="1" max="5" required>
         <button form="reviewform" id="reviewbutton" type="submit">Review</button>
     </form>
@@ -19,23 +19,24 @@
 <?php } ?>
 
 <?php function drawUserReview(?Review $review) { ?>
-    <p style="color: black">You have reviewed this restaurant with <?=$review->grade?></p>
+    <p>You have reviewed this restaurant with <?=$review->grade?></p>
 <?php } ?>
 
 <?php function drawReviews(array $reviews) { ?>
   <section id="reviews">
     <header>
-     <h2 style="color: black">Reviews</h2>
+     <h2 class="rests">Reviews</h2>
     </header>
     <?php if(empty($reviews)): ?>
-      <p style="color: black">No reviews for this restaurant</p>
+      <p id="myreview">No reviews for this restaurant</p>
     <?php else: ?>
       <?php foreach($reviews as $review) { ?> 
         <article class="review">
           <img src="<?=$review->userphoto?>">
-          <p style="color: black"><?=$review->username?></p>
-          <p style="color: black"><?=$review->grade?></p>
-          <p style="color: black"><?=$review->date?></p>
+          <br>
+          <p><b>Username: </b><?=$review->username?></p>
+          <p><b>Grade: </b><?=$review->grade?></p>
+          <p><b>Date: </b><?=$review->date?></p>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -44,9 +45,9 @@
 
 <?php function drawReviewScore(Restaurant $restaurant) { ?>
   <?php if($restaurant->avgscore == 0): ?>
-    <p style="color: black">No reviews yet</p>
+    <p>No reviews yet</p>
   <?php else: ?>
-    <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
+    <p class="avgscore" id="avgscore<?=$restaurant->id?>"></p>
     <script>
       document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
     </script>
@@ -58,6 +59,5 @@
         if(intval($review->user) === $id)
             return $review;
     }
-
     return null;
 } ?>

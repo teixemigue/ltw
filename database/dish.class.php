@@ -20,6 +20,37 @@
       $this->restaurant = $restaurant;
     }
 
+    function save($db) {
+      if(!empty($photo))
+        $this->photo = self::uploadPhoto($photo, strval($this->id));
+
+      $stmt = $db->prepare('
+        UPDATE Dish SET name = ?, price = ?, photo = ?, descrip = ?, category = ?, restaurant = ?
+        WHERE idDish = ?
+      ');
+
+      $stmt->execute(array($this->name, $this->price, $this->photo, $this->description, $this->category, $this->restaurant, $this->id));
+    }
+
+    static function uploadPhoto(string $photo, string $id) : string {
+      $path = "/../photos/dish/$id.jpg";
+
+      unlink(__DIR__ . $path);
+      move_uploaded_file($photo, __DIR__ . $path);
+
+      return $path;
+    }
+
+    static function removeDish(PDO $db, int $id) {
+    $stmt = $db->prepare('
+      DELETE FROM Dish
+      WHERE idDish = ?
+    ');
+
+    $stmt->execute(array($id));
+    
+    }
+
     static function getRestaurantDishes(PDO $db, int $id) : array {
       $stmt = $db->prepare('
         SELECT idDish, name, price, photo, descrip, category, restaurant
@@ -28,7 +59,7 @@
         GROUP BY idDish
       ');
       $stmt->execute(array($id));
-  
+
       $dishes = array();
 
       while ($dish = $stmt->fetch()) {
@@ -66,15 +97,5 @@
         intval($dish['restaurant']),
       );
     }
-
-    function save($db) {
-      $stmt = $db->prepare('
-        UPDATE Dish SET name = ?, price = ?, photo = ?, descrip = ?, category = ?, restaurant = ?
-        WHERE idDish = ?
-      ');
-
-      $stmt->execute(array($this->name, $this->price, $this->photo, $this->descrip, $this->category, $this->restaurant, $this->id));
-    }
-  
   }
 ?>

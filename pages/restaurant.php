@@ -24,7 +24,6 @@
 
   if($session->isLoggedIn()) {
     $userreview = getUserReview($session->getId(), $reviews);
-    echo var_dump($userreview);
     if(is_null($userreview) && ($session->getId() !== $restaurant->owner))
       drawAddReview(intval($_GET['id']));
     else if(!is_null($userreview))

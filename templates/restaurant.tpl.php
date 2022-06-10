@@ -38,11 +38,11 @@
     <?php foreach ($dishes as $dish) { ?>
     <article data-id = "<?=$dish->id?>" class="dishinfo">
       <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
-      
+        <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
+        <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
         <span>Name: </span>
         <a class="dishname"><?=$dish->name?></a>
         <br>
-        <p>Description: </p>
         <a class="description">Description: <?=$dish->description?></a>
         <br>
         <span>Price: </span>
@@ -69,7 +69,6 @@
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
           <?php drawReviewScore($restaurant) ?>
           <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
-          <a href="#">Edit Restaurant Dishes</a>
           <button><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
         </article>
       <?php } ?>
@@ -100,6 +99,38 @@
         <option value="Traditional">Traditional</option>
         <option value="American">American</option>
         <option value="Mexican">Mexican</option>
+        <option value="Other">Other</option>
+      </select>
+    <button type="submit">Save</button>
+  </form>
+<?php } ?>
+
+<?php function drawDishForm(Dish $dish) { ?>
+  <h2 style="color: black" >Dish Info</h2>
+  <form action="../actions/action_edit_dish.php?id=<?=$dish->id?>" method="post" class="dish" enctype="multipart/form-data">
+
+    <label style="color: black" for="photo">Photo:</label>
+    <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
+
+    <label style="color: black" for="name">Name:</label>
+    <input id="name" type="text" name="name" value="<?=$dish->name?>">
+
+    <label style="color: black" for="price">Price:</label>
+    <input id="price" type="text" name="price" pattern="^\d{0,4}(\.\d{1,2})" value="<?=$dish->price?>">
+
+    <label style="color: black" for="description">Description:</label>
+    <input id="description" type="text" name="description" value="<?=$dish->description?>"> 
+    
+    <label style="color: black" for="category">Category:</label>
+      <select id="category" name="category">
+        <option value="<?=$dish->category?>" selected hidden><?=$dish->category?></option>
+        <option value="Beef">Beef</option>
+        <option value="Pork">Pork</option>
+        <option value="Chicken">Chicken</option>
+        <option value="Fish">Fish</option>
+        <option value="Burger">Burger</option>
+        <option value="Pizza">Pizza</option>
+        <option value="Drink">Drink</option>
         <option value="Other">Other</option>
       </select>
     <button type="submit">Save</button>

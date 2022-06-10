@@ -34,7 +34,7 @@
     }
 
     static function uploadPhoto(string $photo, string $name) : string {
-      $path = "/../photos/user/$name.jpg";
+      $path = "/../photos/restaurant/$name.jpg";
 
       unlink(__DIR__ . $path);
       move_uploaded_file($photo, __DIR__ . $path);

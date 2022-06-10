@@ -63,7 +63,7 @@
 <?php } ?>
 
 <?php function drawLoginForm() { ?>
-  <a href="../pages/register.php" class="register">Register</a> 
+  <a href="../pages/register_profile.php" class="register">Register</a> 
   <form action="../actions/action_login.php" method="post" enctype="multipart/form-data">
     <div class="login">
       <label for="Username">Username</label>

@@ -128,7 +128,7 @@ insert into Dish values(
     12.30,
     "photos\img.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -138,7 +138,7 @@ insert into Dish values(
     12.30,
     "photos\dis2.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -148,7 +148,7 @@ insert into Dish values(
     12.30,
     "photos\dis3.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -158,7 +158,7 @@ insert into Dish values(
     12.30,
     "photos\dis4.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -168,7 +168,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -178,7 +178,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -188,7 +188,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -198,7 +198,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -208,7 +208,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -218,7 +218,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -228,7 +228,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -238,7 +238,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -248,7 +248,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -258,7 +258,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -268,7 +268,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -278,7 +278,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -288,7 +288,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -298,7 +298,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -308,7 +308,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -318,7 +318,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -328,7 +328,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -338,7 +338,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -348,7 +348,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -358,7 +358,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -368,7 +368,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -378,7 +378,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -388,7 +388,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -398,7 +398,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -408,7 +408,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -418,7 +418,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -428,7 +428,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -438,7 +438,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -448,7 +448,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -458,7 +458,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 insert into Dish values(
@@ -468,7 +468,7 @@ insert into Dish values(
     12.30,
     "photos\default.jpg",
     "E muito bom",
-    "peixe",
+    "Pizza",
     1
 );
 

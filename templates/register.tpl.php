@@ -64,3 +64,36 @@
     </div>
   </form>
 <?php } ?>
+
+<?php function drawDishRegisterForm(string $restaurantId) { ?>
+  <h2>Add Dish</h2>
+  <form action="../actions/action_add_dish.php?id=<?=$restaurantId?>" method="post" class="profile" enctype="multipart/form-data">
+    <div>
+      <label style="color: black" for="photo">Photo:</label>
+      <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
+
+      <label style="color: black" for="name">Name:</label>
+      <input id="name" type="text" name="name" value="<?=$dish->name?>">
+
+      <label style="color: black" for="price">Price:</label>
+      <input id="price" type="text" name="price" pattern="^\d{0,4}(\.\d{1,2})" value="<?=$dish->price?>">
+
+      <label style="color: black" for="description">Description:</label>
+      <input id="description" type="text" name="description" value="<?=$dish->description?>"> 
+      
+      <label style="color: black" for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="<?=$dish->category?>" selected hidden><?=$dish->category?></option>
+          <option value="Beef">Beef</option>
+          <option value="Pork">Pork</option>
+          <option value="Chicken">Chicken</option>
+          <option value="Fish">Fish</option>
+          <option value="Burger">Burger</option>
+          <option value="Pizza">Pizza</option>
+          <option value="Drink">Drink</option>
+          <option value="Other">Other</option>
+        </select>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+<?php } ?>

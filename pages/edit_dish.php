@@ -10,7 +10,7 @@
   require_once(__DIR__ . '/../database/dish.class.php');
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
-  require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  require_once(__DIR__ . '/../templates/dish.tpl.php');
 
   $db = getDatabaseConnection();
 

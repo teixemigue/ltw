@@ -54,14 +54,15 @@ create table Review(
 
 create table Request(
 
-    idOrder INTEGER PRIMARY KEY,
+    idorder INT NOT NULL,
     price REAL NOT NULL,
     quantity INT NOT NULL,
     date TEXT NOT NULL,
     state TEXT NOT NULL,
     user INT REFERENCES User ON DELETE CASCADE ON UPDATE CASCADE,
     restaurant INT REFERENCES Restaurant ON DELETE CASCADE ON UPDATE CASCADE,
-    dish INT REFERENCES Dish ON DELETE CASCADE ON UPDATE CASCADE
+    dish INT REFERENCES Dish ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY(user, restaurant, dish)
 );
 
 create table Favorite(

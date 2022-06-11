@@ -75,5 +75,67 @@ function attachBuyEvents() {
     const total = values.reduce((t, v) => t + v, 0)
     document.querySelector('#cart table tfoot th:last-child').textContent = total.toFixed(2)
   }
-  
+
+  function SaveItems() {
+    localStorage.clear()
+    var table = document.getElementById("carttable");
+    var counter = 0
+    var counter2 = 0
+    
+    for (let i in table.rows) {
+      let row = table.rows[i]
+      counter2 = 0;
+      if(counter == 0)
+      {
+        counter = counter + 1
+        continue
+
+      }
+      var nome
+      //iterate through rows
+      //rows would be accessed using the "row" variable assigned in the for loop
+      for (let j in row.cells) {
+        let col = row.cells[j]
+        
+        if(counter2 == 0)
+        {
+          nome = col.innerText
+          console.log("primeiro atributo")
+          console.log(nome)
+        }
+        if(counter2 == 2)
+        {
+          console.log("segundo atributo")
+          console.log(col.innerText)
+          if(col.innerText == undefined)
+          {
+            break
+          }
+          localStorage.setItem(String(nome),String(col.innerText))
+          break
+        }
+        
+        //iterate through columns
+        //columns would be accessed using the "col" variable assigned in the for loop
+        counter2 = counter2 + 1
+      }  
+   }
+   for (i = 0; i < localStorage.length; i++) {
+     key = localStorage.key(i);
+      /*
+     console.log(localStorage.key(i))
+     console.log(localStorage.getItem(key));
+     */
+   }
+   window.location.href = "../pages/checkout.php";
+    
+  }
+  function CheckBrowser() {
+    if ('localStorage' in window && window['localStorage'] !== null) {
+      // we can use localStorage object to store data
+      return true;
+    } else {
+        return false;
+    }
+  }
   attachBuyEvents()

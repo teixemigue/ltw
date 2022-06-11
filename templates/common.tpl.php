@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/dishes.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/profiles.css">  
     <link rel="stylesheet" href="../css/restaurant.css">  

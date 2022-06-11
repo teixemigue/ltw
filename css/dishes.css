@@ -1,0 +1,136 @@
+/* #1: drawDishesFromRestaurant */
+
+.restdishes {
+    color: #080808;
+    font-family: 'Satisfy', cursive;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    margin-left: 1.0em;
+    text-transform: capitalize;
+}
+
+.revscores {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 15px;
+    margin: 1em;
+    margin-left: 5em;
+    margin-top: 0em;
+    padding: 1em;
+}
+
+.avgscore {
+    color: #fefefe;
+}
+
+.restdishes, .revscores {
+    display: inline-block;
+}
+
+.dishadd {
+    align-items: center;
+    background-clip: padding-box;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #080808;
+    display: inline-block;
+    font-size: 15px;
+    margin: 1em;
+    margin-left: 0.5em;
+    margin-top: 0em;
+    padding: 1em;
+}
+
+.dishadd:hover, .dishadd:focus {
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.dishadd:hover {
+    transform: translateY(-2px);
+}
+
+.dishadd:visited {
+    background-color:  #abac7f;
+    color: #080808;
+}
+
+.dishinfo {
+    align-items: center;
+    background-clip: padding-box;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #080808;
+    display: inline-block;
+    font-size: 15px;
+    margin-left: 1em;
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.dishinfo:first-child {
+    margin-left: 5em;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.dishinfo:hover, .dishinfo:focus {
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.dishadd:visited {
+    background-color:  #abac7f;
+    color: #080808;
+}
+
+
+.dishphoto {
+    border-bottom: 1em;
+    border-left: 1em;
+    border-right: 10em;
+    border-top: 1em;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.quantity {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    font-size: 16px;
+    margin-top: 1em;
+    margin: 0.5em 1em 0.5em 1em;
+    width: 4em;
+}
+
+.order {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    font-size: 16px;
+    margin: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+}
+
+/* #1: end*/

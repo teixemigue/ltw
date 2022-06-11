@@ -28,14 +28,14 @@
      <h2 style="color: black">Reviews</h2>
     </header>
     <?php if(empty($reviews)): ?>
-      <p style="color: black">No reviews for this restaurant</p>
+      <p>No reviews for this restaurant</p>
     <?php else: ?>
       <?php foreach($reviews as $review) { ?> 
         <article class="review">
           <img src="<?=$review->userphoto?>">
-          <p style="color: black"><?=$review->username?></p>
-          <p style="color: black"><?=$review->grade?></p>
-          <p style="color: black"><?=$review->date?></p>
+          <p><?=$review->username?></p>
+          <p><?=$review->grade?></p>
+          <p><?=$review->date?></p>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -44,9 +44,9 @@
 
 <?php function drawReviewScore(Restaurant $restaurant) { ?>
   <?php if($restaurant->avgscore == 0): ?>
-    <p style="color: black">No reviews yet</p>
+    <p>No reviews yet</p>
   <?php else: ?>
-    <p class="avgscore" id="avgscore<?=$restaurant->id?>" style="color: black"></p>
+    <p class="avgscore" id="avgscore<?=$restaurant->id?>"></p>
     <script>
       document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
     </script>

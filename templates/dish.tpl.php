@@ -16,31 +16,33 @@
 <?php } ?>
 
 <?php function drawDishesFromRestaurant(Restaurant $restaurant, array $dishes, array $categories, Session $session) { ?>
-  <h2 class="drawrest"><?=$restaurant->name?></h2>
-  <?php drawReviewScore($restaurant) ?>
+  <h2 class="restdishes"><?=$restaurant->name?></h2>
+  <a class="revscores">
+    <?php drawReviewScore($restaurant) ?>
+  </a>
   <?php if($session->isOwner()) : ?>
-    <a href="../pages/register_dish.php?id=<?=$restaurant->id?>">Add Dish</a>
+    <a class="dishadd" href="../pages/register_dish.php?id=<?=$restaurant->id?>">Add Dish</a>
   <?php endif; ?>
   <section id="dishes">
     <?php foreach($categories as $category) { ?>
         <h2 id="<?=$category?>"><?=$category?></h2>
         <?php foreach ($dishes[$category] as $dish) { ?>
         <article data-id = "<?=$dish->id?>" class="dishinfo">
-        <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
-            <?php if($session->isOwner()) : ?>
-            <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
-            <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
-            <?php endif; ?>
-            <span>Name: </span>
-            <a class="dishname"><?=$dish->name?></a>
-            <br>
-            <a class="description">Description: <?=$dish->description?></a>
-            <br>
-            <span>Price: </span>
-            <a class="price"><?=$dish->price?></a>
-            <span>&euro;</span>
-            <input class="quantity" type="number" value="1">
-            <button class="order">Order</button>
+          <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
+          <?php if($session->isOwner()) : ?>
+          <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
+          <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
+          <?php endif; ?>
+          <span>Name: </span>
+          <a class="dishname"><?=$dish->name?></a>
+          <br>
+          <a class="description">Description: <?=$dish->description?></a>
+          <br>
+          <span>Price: </span>
+          <a class="price"><?=$dish->price?></a>
+          <span>&euro;</span>
+          <input class="quantity" type="number" value="1">
+          <button class="order">Order</button>
         </article>
         <?php } ?>
     <?php } ?>

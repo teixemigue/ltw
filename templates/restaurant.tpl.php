@@ -35,7 +35,7 @@
   <h2 class="title">Restaurant List</h2>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
-      <p>You haven't added any restaurants</p>
+      <p class="none">You haven't added any restaurants</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
@@ -52,7 +52,7 @@
 <?php } ?>
 
 <?php function drawRestaurantForm(Restaurant $restaurant) { ?>
-  <h2>Restaurant Info</h2>
+  <h2 class="title">Restaurant Info</h2>
   <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="restaurant" enctype="multipart/form-data">
 
     <label for="photo">Photo:</label>

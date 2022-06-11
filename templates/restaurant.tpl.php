@@ -6,7 +6,7 @@
 ?>
 
 <?php function drawRestaurantCategories(array $categories) { ?>
-    <h2 class="rests">Restaurants</h2>
+    <h2 class="title">Restaurants</h2>
   </header>
   <section id="categories">
     <?php foreach($categories as $category) { ?>
@@ -18,13 +18,13 @@
 <?php function drawRestaurants(array $restaurants) { ?>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
-      <p style="color: black">No restaurants found</p>
+      <p class="none">No restaurants found</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <?php drawReviewScore($restaurant) ?>
+          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <a><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -32,16 +32,16 @@
 <?php } ?>
 
 <?php function drawOwnerRestaurants(array $restaurants) { ?>
-  <h2 style="color: black">Restaurant List</h2>
+  <h2 class="title">Restaurant List</h2>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
-      <p style="color: black">You haven't added any restaurants</p>
+      <p>You haven't added any restaurants</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
           <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <?php drawReviewScore($restaurant) ?>
+          <a><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
           <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
           <button><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
         </article>
@@ -52,19 +52,19 @@
 <?php } ?>
 
 <?php function drawRestaurantForm(Restaurant $restaurant) { ?>
-  <h2 style="color: black" >Restaurant Info</h2>
+  <h2>Restaurant Info</h2>
   <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="restaurant" enctype="multipart/form-data">
 
-    <label style="color: black" for="photo">Photo:</label>
+    <label for="photo">Photo:</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
 
-    <label style="color: black" for="name">Name:</label>
+    <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<?=$restaurant->name?>">
     
-    <label style="color: black" for="address">Address:</label>
+    <label for="address">Address:</label>
     <input id="address" type="text" name="address" value="<?=$restaurant->address?>"> 
     
-    <label style="color: black" for="category">Category:</label>
+    <label for="category">Category:</label>
       <select id="category" name="category">
         <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
         <option value="Italian">Italian</option>

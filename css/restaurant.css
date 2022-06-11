@@ -1,0 +1,376 @@
+/* RESTAURANT PAGE STARTS*/
+
+.drawrest {
+    color: #000000;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#dishes {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.dishphoto {
+    left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    padding-left: 3em;
+}
+
+.dishinfo {
+    color: #000000;
+    font-size: 25px;
+    font-weight: 400;
+    text-transform: capitalize;
+    vertical-align: top;
+    display: inline-block;
+    padding-top: 2em;
+    padding-left: 0.4em;
+    left: 0;
+    cursor: pointer;
+}
+
+.name {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.description {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+  
+.price {
+    color: #000000;
+    font-size: 15px;
+    font-weight: 300;
+}
+  
+/* RESTAURANT PAGE ENDS */
+
+/* DRAW RESTAURANTS */
+
+.rests {
+    color: #000000;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+#searchrestaurants {
+    width: 10%;
+    top: 11em;
+    right: 1em;
+    box-sizing: border-box;
+    position: absolute;
+}
+
+.restaurants {
+    color: #000000;
+    font-size: 400;
+    display: block;
+}
+
+
+
+/* #12: drawRestaurants */
+
+#restaurants {
+
+}
+
+.none {
+    font-size: 17px;
+    text-align: center;
+}
+
+.places {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1.5em; 
+    padding: 1em 2em 1em 2em;
+}
+
+.places a:last-child {
+    display: flex;
+    font-size: 15px;
+    font-family: 200;
+    padding: 1em;
+}
+
+.restphoto {
+    border-bottom: 1em;
+    border-left: 1em;
+    border-right: 10em;
+    border-top: 1em;
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.restname {
+    color:#080808;
+    cursor: pointer;
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-left: 0.2em;
+    margin-top: 0.3em;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.restname:visited {
+    color:#080808;
+}
+
+
+/* #12: end */
+
+/* #13: drawRestaurantCategories */
+
+#categories {
+    position: relative;
+}
+
+#category {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+#category:first-child {
+    margin-left: 2.5em;
+}
+
+/* #13: end */
+
+/* DRAW ENDS */
+
+/* for when i have no restaurants added */
+
+#restempty {
+    color: #080808;
+    position: relative;
+    padding-top: 0em;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: center;
+}
+  
+.addbutton{
+    background-clip: padding-box;
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-sizing: border-box;
+    color: #080808;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 2em;
+    text-align: center;
+    width: auto;
+}
+  
+.addbutton:hover, .addbutton:focus {
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+  
+.addbutton:hover {
+    transform: translateY(-2px);
+}
+  
+#adderrest:visited {
+    color: #080808;
+}
+  
+/* for when i have categories added*/
+  
+.editrinfo, .editrdishes, .places button {
+    background-clip: padding-box;
+    background-color:  #373d20;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-sizing: border-box;
+    color: #fefefe;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    margin: 1em;
+    text-align: center; 
+    width: auto;
+}
+  
+.places button a {
+    color: #fefefe;
+}
+  
+.places button:hover {
+    transform: translateY(-2px);
+}
+  
+.places a {
+    color: #080808;
+    display: block;
+}
+  
+.places a:visited, button a:visited {
+    color: #080808;
+}
+  
+.restrev {
+    padding-top: 1em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+  
+/* categories */
+  
+#addcategory {
+    align-items: center;
+    background-clip: padding-box;
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-sizing: border-box;
+    color: #080808;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 1em;
+    justify-content: center;
+}
+
+/* rest info */
+
+#drawrest {
+    display: inline-flex;
+}
+
+#revscore {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-flex;
+    font-size: 15px;
+    margin: 1em;
+    margin-left: 5em;
+    margin-top: 0em;
+}
+
+#score {
+    margin-right: 0.5em;
+}
+
+.dishreview {
+    align-items: center;
+    justify-content: center;
+}
+
+.dishinfo {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2em; 
+}
+
+.dishinfo:hover,
+.dishinfo:focus {
+  background-color:  #abac7f;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.dishinfo:active {
+  background-color:  #abac7f;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+}
+
+#dishphoto {
+    display: block;
+    border-top: 1em;
+    border-bottom: 1em;
+    border-right: 10em;
+    border-left: 1em;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.infodish {
+    font-size: 15px;
+    font-family: 200;
+    padding: 1em;
+}
+
+.orderdish {
+    display: block;
+}
+
+.quantity {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 1em;
+    margin: 0.5em 1em 0.5em 1em;
+    width: 4em;
+}
+
+.order {
+    align-items: center;
+    background-color:  #373d20;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #fefefe;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0.5em 1em 0.5em 1em;
+    cursor: pointer;
+}

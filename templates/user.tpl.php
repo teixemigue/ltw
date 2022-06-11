@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1); ?>
 
 <?php function drawProfileForm(User $user) { ?>
-<h2>User Profile</h2>
+<h2 class="title">User Profile</h2>
 <form action="../actions/action_edit_profile.php" method="post" class="profile" enctype="multipart/form-data">
 
   <label for="photo">Photo:</label>

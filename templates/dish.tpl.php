@@ -54,22 +54,22 @@
 <?php } ?>
 
 <?php function drawDishForm(Dish $dish) { ?>
-  <h2 style="color: black" >Dish Info</h2>
+  <h2 class="title">Dish Info</h2>
   <form action="../actions/action_edit_dish.php?id=<?=$dish->id?>" method="post" class="dish" enctype="multipart/form-data">
 
-    <label style="color: black" for="photo">Photo:</label>
+    <label for="photo">Photo:</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
 
-    <label style="color: black" for="name">Name:</label>
+    <label for="name">Name:</label>
     <input id="name" type="text" name="name" value="<?=$dish->name?>">
 
-    <label style="color: black" for="price">Price:</label>
+    <label for="price">Price:</label>
     <input id="price" type="text" name="price" pattern="^\d{0,4}(\.\d{1,2})" value="<?=$dish->price?>">
 
-    <label style="color: black" for="description">Description:</label>
+    <label for="description">Description:</label>
     <input id="description" type="text" name="description" value="<?=$dish->description?>"> 
     
-    <label style="color: black" for="category">Category:</label>
+    <label for="category">Category:</label>
       <select id="category" name="category">
         <option value="<?=$dish->category?>" selected hidden><?=$dish->category?></option>
         <option value="Beef">Beef</option>

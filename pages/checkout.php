@@ -13,15 +13,17 @@
   require_once(__DIR__ . '/../templates/user.tpl.php');
   require_once(__DIR__ . '/../templates/order.tpl.php');
   require_once(__DIR__ . '/../database/order.class.php');
-
+  require_once(__DIR__ . '/../database/dish.class.php');
   $db = getDatabaseConnection();
+
+
 
   $user = User::getUser($db, $session->getId());
   
   drawHeader($session);
   
   $orders = Order::getOrders($db,intval($user));
-
+  
   drawOrders($orders,$session);
 
   drawFooter();

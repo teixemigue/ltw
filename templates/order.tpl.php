@@ -6,6 +6,7 @@
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/user.tpl.php');
+  require_once(__DIR__ . '/../database/dish.class.php');
 
 ?>
 <?php function drawOrders(array $orders, Session $session) { ?>
@@ -13,11 +14,14 @@
   <?php endif; ?>
   <section id="orders">    
     <?php foreach ($orders as $order) { ?>
+        <?php $db = getDatabaseConnection();
+              $dish = Dish::getDish($db,intval($order->dish)); ?>
     <article data-id = "<?=$order->idorder?>" class="orderinfo">
         <?php if($session->isOwner()) : ?>
         <?php endif; ?>
-        <span>Product id: </span>
-        <a class="prodctid"><?=$order->dish?></a>
+        <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
+        <span>Product: </span>
+        <a class="prodctid"><?=$dish->name?></a>
         <br>
         <span>Order number: </span>
         <a class="ordernumber"><?=$order->idorder?></a>

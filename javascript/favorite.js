@@ -63,7 +63,7 @@ async function showFavoriteRestaurants() {
 }
 
 async function showFavoriteDishes(id) {
-    toggleDishFavorites = !toggleFavorites;
+    toggleDishFavorites = !toggleDishFavorites;
     const dishes = document.getElementsByClassName("dishinfo");
 
     if(toggleDishFavorites) {
@@ -75,7 +75,7 @@ async function showFavoriteDishes(id) {
         for(const dish of dishes) {
             checked = false;
 
-            for(favorite of favorites) {
+            for(const favorite of favorites) {
                 if(favorite.id == dish.getAttribute("data-id")) {
                     checked = true;
                     break;

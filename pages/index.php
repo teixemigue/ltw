@@ -6,9 +6,11 @@
 
   require_once(__DIR__ . '/../database/connection.db.php');
   require_once(__DIR__ . '/../database/restaurant.class.php');
+  require_once(__DIR__ . '/../database/favorite.class.php');
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
+  
 
   $db = getDatabaseConnection();
   if($_GET['search'] != null)
@@ -22,9 +24,12 @@
 
   $categories = Restaurant::getRestaurantCategories($db);
 
+  if($session->isLoggedIn())
+    $favorites = Favorite::getFavoriteRestaurants($db, $session->getId());
+
   drawHeader($session);
   drawSearchBar();
   drawRestaurantCategories($categories);
-  drawRestaurants($restaurants);
+  drawRestaurants($restaurants, $favorites);
   drawFooter();
 ?>

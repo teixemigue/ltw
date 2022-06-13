@@ -8,6 +8,7 @@
 
   require_once(__DIR__ . '/../database/restaurant.class.php');
   require_once(__DIR__ . '/../database/dish.class.php');
+  require_once(__DIR__ . '/../database/favorite.class.php');
 
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/restaurant.tpl.php');
@@ -20,10 +21,13 @@
   $dishes = Dish::getRestaurantDishes($db, intval($_GET['id']));
   $reviews = Review::getReviewsFromRestaurant($db, intval($_GET['id']));
   $categories = Dish::getDishCategoriesFromRestaurant($db, intval($_GET['id']));
+  
+  if($session->isLoggedIn())
+    $favorites = Favorite::getFavoriteDishesFromRestaurant($db, $session->getId(), intval($_GET['id']));
 
   drawHeader($session);
   drawDishCategories($restaurant, $categories);
-  drawDishesFromRestaurant($restaurant, $dishes, $categories, $session);
+  drawDishesFromRestaurant($dishes, $categories, $favorites, $session);
 
   if($session->isLoggedIn()) {
     $userreview = getUserReview($session->getId(), $reviews);

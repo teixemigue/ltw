@@ -58,6 +58,7 @@
     box-sizing: border-box;
     color: #080808;
     cursor: pointer;
+    display: block;
     font-size: 16px;
     padding: 1em 2em 1em 2em;
     margin: 1em;
@@ -84,6 +85,8 @@
     background-color:  #abac7f;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
+
+
 
 .profile input:active {
     background-color:  #abac7f;

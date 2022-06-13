@@ -1,4 +1,17 @@
 /* #1: drawDishesFromRestaurant */
+.categoryname {
+    color: #080808;
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: capitalize;
+    margin-left: 4em;
+}
+
+.dishp {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
 
 .restdishes {
     color: #080808;
@@ -72,17 +85,14 @@
     border-radius: 1em;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
     color: #080808;
-    display: inline-block;
+    display: grid;
     font-size: 15px;
-    margin-left: 1em;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 1em;
     padding: 1em;
-}
-
-.dishinfo:first-child {
-    margin-left: 5em;
-    margin-right: auto;
-    justify-content: center;
 }
 
 .dishinfo:hover, .dishinfo:focus {
@@ -94,7 +104,6 @@
     background-color:  #abac7f;
     color: #080808;
 }
-
 
 .dishphoto {
     border-bottom: 1em;
@@ -131,6 +140,15 @@
     font-size: 16px;
     margin: 0.5em 1em 0.5em 1em;
     cursor: pointer;
+}
+
+.order:hover, .order:focus {
+    background-color:  #373d20;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.order:hover {
+    transform: translateY(-2px);
 }
 
 /* #1: end*/

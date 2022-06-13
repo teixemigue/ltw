@@ -65,11 +65,18 @@ create table Request(
     PRIMARY KEY(user, restaurant, dish)
 );
 
-create table Favorite(
+create table FavoriteRestaurant(
 
     user INT REFERENCES User ON DELETE CASCADE ON UPDATE CASCADE,
     restaurant INT REFERENCES Restaurant ON DELETE CASCADE ON UPDATE CASCADE,
     PRIMARY KEY(user, restaurant)
+);
+
+create table FavoriteDish(
+
+    user INT REFERENCES User ON DELETE CASCADE ON UPDATE CASCADE,
+    dish INT REFERENCES Dish ON DELETE CASCADE ON UPDATE CASCADE,
+    PRIMARY KEY(user, dish)
 );
 
 PRAGMA foreign_keys = ON;

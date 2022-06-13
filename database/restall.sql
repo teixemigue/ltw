@@ -6,7 +6,8 @@ drop table if exists Dish;
 drop table if exists Restaurant;
 drop table if exists Review;
 drop table if exists Request;
-drop table if exists Favorite;
+drop table if exists FavoriteRestaurant;
+drop table if exists FavoriteDish;
 
 create table User(
 
@@ -62,7 +63,7 @@ create table Request(
     user INT REFERENCES User ON DELETE CASCADE ON UPDATE CASCADE,
     restaurant INT REFERENCES Restaurant ON DELETE CASCADE ON UPDATE CASCADE,
     dish INT REFERENCES Dish ON DELETE CASCADE ON UPDATE CASCADE,
-    PRIMARY KEY(user, restaurant, dish)
+    PRIMARY KEY(user, restaurant, dish, idorder)
 );
 
 create table FavoriteRestaurant(

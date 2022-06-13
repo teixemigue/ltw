@@ -2,7 +2,7 @@
   declare(strict_types = 1);
 
   class Order {
-    public int $id;
+    public int $idorder;
     public float $price;
     public int $quantity;
     public string $date;
@@ -11,71 +11,56 @@
     public int $restaurant;
     public int $dish;
 
-    public function __construct(int $id, string $name, float $price, string $photo, string $description, string $category, int $restaurant) {
-      $this->id = $id;
-      $this->name = $name;
+    public function __construct(int $id, float $price, int $quantity, string $date, string $state, int $user,int $restaurant,int $dish) {
+      $this->idorder = $id;
       $this->price = $price;
-      $this->photo = $photo;
-      $this->description = $description;
-      $this->category = $category;
+      $this->quantity = $quantity;
+      $this->date = $date;
+      $this->state = $state;
+      $this->user = $user;
       $this->restaurant = $restaurant;
+      $this->dish = $dish;
     }
 
-    static function getRestaurantDishes(PDO $db, int $id) : array {
+    function save($db,string $state, int $idorder) {
       $stmt = $db->prepare('
-        SELECT idDish, name, price, photo, descrip, category, restaurant
-        FROM Dish 
-        WHERE restaurant = ?
-        GROUP BY idDish
+        UPDATE Request SET idorder = ?, price = ?, quantity = ?, date = ?, state = ?, user = ?, restaurant = ?, dish = ? WHERE idorder = ?');
+
+      $stmt->execute(array($idorder, $this->price, $this->quantity, $this->date, $state, $this->user, $this->restaurant, $this->$dish));
+    }
+
+    static function getOrders(PDO $db, int $id) : array {
+      $stmt = $db->prepare('
+        SELECT idorder, price, quantity, date, state, user, restaurant, dish
+        FROM Request 
+        WHERE user = ?
+        GROUP BY idorder
       ');
       $stmt->execute(array($id));
-  
-      $dishes = array();
+      
+      $orders = array();
 
-      while ($dish = $stmt->fetch()) {
-        $dishes[] = new Dish(
-          intval($dish['idDish']), 
-          $dish['name'],
-          floatval($dish['price']),
-          $dish['photo'],
-          $dish['descrip'],
-          $dish['category'],
-          intval($dish['restaurant']),
+      
+
+      while ($order = $stmt->fetch()) {
+        $orders[] = new Order(
+          intval($order['idorder']), 
+          floatval($order['price']),
+          intval($order['quantity']),
+          $order['date'],
+          $order['state'],
+          intval($order['user']),
+          intval($order['restaurant']),
+          intval($order['dish']),
         );
       }
-  
-      return $dishes;
+      return $orders;
     }
+    
 
-    static function getDish(PDO $db, int $id) : Dish {
-      $stmt = $db->prepare('
-        SELECT idDish, name, price, photo, descrip, category, restaurant
-        FROM Dish 
-        WHERE idDish = ?
-      ');
-      $stmt->execute(array($id));
-  
-      $dish = $stmt->fetch();
-  
-      return new Dish(
-        intval($dish['idDish']), 
-        $dish['name'],
-        floatval($dish['price']),
-        $dish['photo'],
-        $dish['descrip'],
-        $dish['category'],
-        intval($dish['restaurant']),
-      );
-    }
+    
 
-    function save($db) {
-      $stmt = $db->prepare('
-        UPDATE Dish SET name = ?, price = ?, photo = ?, descrip = ?, category = ?, restaurant = ?
-        WHERE idDish = ?
-      ');
-
-      $stmt->execute(array($this->name, $this->price, $this->photo, $this->descrip, $this->category, $this->restaurant, $this->id));
-    }
+    
   
   }
 ?>

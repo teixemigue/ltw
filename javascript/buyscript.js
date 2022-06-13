@@ -120,15 +120,26 @@ function attachBuyEvents() {
         counter2 = counter2 + 1
       }  
    }
-   for (i = 0; i < localStorage.length; i++) {
+    for (i = 0; i < localStorage.length; i++) {
      key = localStorage.key(i);
-      /*
+     item = localStorage.getItem(key);
+     /*
      console.log(localStorage.key(i))
      console.log(localStorage.getItem(key));
      */
-   }
-   window.location.href = "../pages/checkout.php";
+     const request = new XMLHttpRequest();
+     request.open("get","../pages/storeorder.php?" + encodeForAjax({id:String(key) ,di:String(item)}),false);
+     request.send();
+      
+     
+    }
+    window.location.replace("../pages/checkout.php");
     
+  }
+  function encodeForAjax(data) {
+    return Object.keys(data).map(function(k){
+      return encodeURIComponent(k) + '=' + encodeURIComponent(data[k])
+    }).join('&')
   }
   function CheckBrowser() {
     if ('localStorage' in window && window['localStorage'] !== null) {

@@ -15,13 +15,20 @@
   </section>
 <?php } ?>
 
-<?php function drawRestaurants(array $restaurants) { ?>
+<?php function drawRestaurants(array $restaurants, ?array $favorites) { ?>
   <section id="restaurants">
     <?php if(empty($restaurants)): ?>
       <p class="none">No restaurants found</p>
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
+          <?php if(isset($favorites)): ?>
+            <?php if(in_array($restaurant, $favorites)): ?>
+              <button onclick="restaurantFavorite(this, <?=$restaurant->id?>)" id="favorite">&#9733;</button>
+            <?php else: ?>
+              <button onclick="restaurantFavorite(this, <?=$restaurant->id?>)" id="favorite">&#9734;</button>
+            <?php endif; ?>
+          <?php endif; ?>
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
           <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>

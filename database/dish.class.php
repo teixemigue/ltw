@@ -91,6 +91,7 @@
           intval($dish['restaurant']),
         );
       }
+      
       return $dishes;
     }
 

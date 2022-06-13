@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="../css/sidebar.css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="../javascript/buyscript.js" defer></script>
+    <script src="../javascript/favorite.js" defer></script>
   </head>
   <body>
     <header class="header">

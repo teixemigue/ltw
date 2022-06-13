@@ -102,7 +102,8 @@
             floatval($restaurant['avgscore'])
           );
         }
-          return $restaurants;
+
+        return $restaurants;
 
       }
     

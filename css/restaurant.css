@@ -9,13 +9,6 @@
     text-transform: capitalize;
 }
 
-#dishes {
-    color: #000000;
-    font-size: 15px;
-    font-weight: 300;
-    box-sizing: border-box;
-}
-
 .dishphoto {
     left: 1em;
     padding-top: 1em;

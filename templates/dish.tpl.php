@@ -25,36 +25,38 @@
   <?php endif; ?>
   <section id="dishes">
     <?php foreach($categories as $category) { ?>
-        <h2 id="<?=$category?>"><?=$category?></h2>
-        <?php foreach ($dishes[$category] as $dish) { ?>
-          <article data-id = "<?=$dish->id?>" class="dishinfo">
-            <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
+        <h2 class="categoryname" id="<?=$category?>"><?=$category?></h2>
+        <section class="dishp">
+          <?php foreach ($dishes[$category] as $dish) { ?>
+            <article data-id = "<?=$dish->id?>" class="dishinfo">
+              <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
 
-            <?php if($session->isOwner()) : ?>
-              <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
-              <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
-            <?php endif; ?>
-
-            <?php if(isset($favorites)): ?>
-              <?php if(in_array($dish, $favorites)): ?>
-                <button onclick="dishFavorite(this, <?=$dish->id?>)" id="favorite">&#9733;</button>
-              <?php else: ?>
-                <button onclick="dishFavorite(this, <?=$dish->id?>)" id="favorite">&#9734;</button>
+              <?php if($session->isOwner()) : ?>
+                <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
+                <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
               <?php endif; ?>
-            <?php endif; ?>
 
-            <span>Name: </span>
-            <a class="dishname"><?=$dish->name?></a>
-            <br>
-            <a class="description">Description: <?=$dish->description?></a>
-            <br>
-            <span>Price: </span>
-            <a class="price"><?=$dish->price?></a>
-            <span>&euro;</span>
-            <input class="quantity" type="number" value="1">
-            <button class="order">Order</button>
-          </article>
-        <?php } ?>
+              <?php if(isset($favorites)): ?>
+                <?php if(in_array($dish, $favorites)): ?>
+                  <button onclick="dishFavorite(this, <?=$dish->id?>)" id="favorite">&#9733;</button>
+                <?php else: ?>
+                  <button onclick="dishFavorite(this, <?=$dish->id?>)" id="favorite">&#9734;</button>
+                <?php endif; ?>
+              <?php endif; ?>
+
+              <span>Name: </span>
+              <a class="dishname"><?=$dish->name?></a>
+              <br>
+              <a class="description">Description: <?=$dish->description?></a>
+              <br>
+              <span>Price: </span>
+              <a class="price"><?=$dish->price?></a>
+              <span>&euro;</span>
+              <input class="quantity" type="number" value="1">
+              <button class="order">Order</button>
+            </article>
+          <?php } ?>
+        </section>
     <?php } ?>
   </section>
   <script>

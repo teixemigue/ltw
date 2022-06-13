@@ -20,8 +20,11 @@
     <?php if(empty($restaurants)): ?>
       <p class="none">No restaurants found</p>
     <?php else: ?>
+      <?php if(isset($favorites)): ?>
+        <button id="favorites" onclick="showFavoriteRestaurants()">Show Favorites</button>
+      <?php endif; ?>
       <?php foreach($restaurants as $restaurant) { ?> 
-        <article class="places">
+        <article data-id="<?=$restaurant->id?>" class="places">
           <?php if(isset($favorites)): ?>
             <?php if(in_array($restaurant, $favorites)): ?>
               <button onclick="restaurantFavorite(this, <?=$restaurant->id?>)" id="favorite">&#9733;</button>

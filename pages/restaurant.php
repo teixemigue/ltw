@@ -27,7 +27,7 @@
 
   drawHeader($session);
   drawDishCategories($restaurant, $categories);
-  drawDishesFromRestaurant($dishes, $categories, $favorites, $session);
+  drawDishesFromRestaurant($dishes, $categories, $favorites, $session, $restaurant);
 
   if($session->isLoggedIn()) {
     $userreview = getUserReview($session->getId(), $reviews);

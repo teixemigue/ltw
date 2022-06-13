@@ -19,10 +19,15 @@
   </section>
 <?php } ?>
 
-<?php function drawDishesFromRestaurant(array $dishes, array $categories, ?array $favorites, Session $session) { ?>
-  <?php if($session->isOwner()) : ?>
+<?php function drawDishesFromRestaurant(array $dishes, array $categories, ?array $favorites, Session $session, Restaurant $restaurant) { ?>
+  <?php if(isset($favorites)): ?>
+    <button id="favorites" onclick="showFavoriteDishes(<?=$restaurant->id?>)">Show Favorites</button>
+  <?php endif; ?>
+
+  <?php if($session->isLoggedIn() && $session->getId() === $restaurant->owner) : ?>
     <a class="dishadd" href="../pages/register_dish.php?id=<?=$dish->restaurant?>">Add Dish</a>
   <?php endif; ?>
+
   <section id="dishes">
     <?php foreach($categories as $category) { ?>
         <h2 class="categoryname" id="<?=$category?>"><?=$category?></h2>
@@ -31,7 +36,7 @@
             <article data-id = "<?=$dish->id?>" class="dishinfo">
               <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
 
-              <?php if($session->isOwner()) : ?>
+              <?php if($session->isLoggedIn() && $session->getId() === $restaurant->owner) : ?>
                 <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
                 <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
               <?php endif; ?>

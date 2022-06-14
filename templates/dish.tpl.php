@@ -34,11 +34,9 @@
         <section class="dishp">
           <?php foreach ($dishes[$category] as $dish) { ?>
             <article data-id = "<?=$dish->id?>" class="dishinfo">
-              <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
-
               <?php if($session->isLoggedIn() && $session->getId() === $restaurant->owner) : ?>
-                <button><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
-                <button><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
+                <button class="dishedit"><a href="../pages/edit_dish.php?id=<?=$dish->id?>"><i class="fa fa-edit"></i></a></button>
+                <button class="dishtrash"><a href="../actions/action_delete_dish.php?id=<?=$dish->id?>"><i class="fa fa-trash"></i></a></button>
               <?php endif; ?>
 
               <?php if(isset($favorites)): ?>
@@ -49,6 +47,7 @@
                 <?php endif; ?>
               <?php endif; ?>
 
+              <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
               <span>Name: </span>
               <a class="dishname"><?=$dish->name?></a>
               <br>
@@ -57,6 +56,7 @@
               <span>Price: </span>
               <a class="price"><?=$dish->price?></a>
               <span>&euro;</span>
+              <br>
               <input class="quantity" type="number" value="1">
               <button class="order">Order</button>
             </article>

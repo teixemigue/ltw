@@ -119,21 +119,30 @@
           <li><a href="../pages/owner_restaurants.php">Restaurants</a></li>
         <?php endif; ?>
         <li><a href="#">&#128722;</a></li>
+        <li><a>Shopping Cart</a></li>
+        <li>
+          <section id="cart">
+            <table id="carttable">
+              <thead>
+                <tr class="cartvalues">
+                  <th>Prod</th>
+                  <th>Quant</th>
+                  <th>Price</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th colspan="4">Total:</th>
+                  <th>0</th>
+                </tr>
+              </tfoot>
+            </table>
+          </section>
+        </li>
+        <a><button class="checkoutbutton" type="button" onclick="SaveItems()">Checkout</button></a>
         <li><a href="javascript:void(0)" class="closebar" onclick="closeNav()">×</a></li>
       </ul>
-    <h2>Shopping Cart</h2>
-    <section id="cart">
-      <table id="carttable">
-        <thead>
-          <tr><th>Prod</th><th>Quant</th><th>Price</th><th>Total</th></tr>
-        </thead>
-        <tfoot>
-          <tr><th colspan="4">Total:</th><th>0</th></tr>
-        </tfoot>
-      </table>
-      
-    </section>
-    <button type="button" onclick="SaveItems()">Checkout</button>
     </nav>      
     
   </div>

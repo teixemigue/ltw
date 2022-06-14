@@ -1,31 +1,31 @@
-/* SIDEBAR BEGINS */
+/* sidebar */
 
 #main {
     display: grid;
 }
 
 .sidebar {
-    height: 100%;
-    width: 0;
-    display: grid;
-    position: fixed;
     align-items: center;
-    z-index: 1;
-    top: 0;
-    right: 0;
     background-color: #373d20;
     color: #fefefe;
+    display: grid;
+    height: 100%;
     overflow-x: hidden;
+    padding-top: 0.5em;
+    position: fixed;
+    right: 0;
+    top: 0;
     transition: 0.5s;
-    padding-top: 60px;
+    width: 0;
+    z-index: 1;
 }
 
 .sidebar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
     color: #fefefe;
     display: block;
+    font-size: 25px;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
     transition: 0.3s;
 }
 
@@ -34,20 +34,20 @@
 }
 
 .sidebar .closebar {
-    position: absolute;
-    top: 0;
     color: #fefefe;
-    right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    position: absolute;
+    right: 25px;
+    top: 0;
 }
 
 .openbar {
-    font-size: 20px;
-    cursor: pointer;
-    color: #fefefe;
     border: none;
+    color: #fefefe;
+    cursor: pointer;
     flex: 1;
+    font-size: 20px;
 }
 
 .openbar:hover {
@@ -56,12 +56,12 @@
 
 #buttonsidebar {
     background-color: transparent;
-    position: absolute;
     font-size: 25px;
     padding: 1em 2em 1em 2em;
-    top: 0;
+    position: absolute;
     right: 0;
     text-align: center;
+    top: 0;
 }
 
 #user {
@@ -69,11 +69,11 @@
 }
 
 .username {
+    color: #fefefe;
     font-size: 25px;
+    padding-bottom: 1em;
     padding-left: 1em;
     padding-top: 0.5em;
-    padding-bottom: 1em;
-    color: #fefefe;
 }
 
 .userphoto {
@@ -85,11 +85,34 @@
 }
 
 .menu ul li a{
-color: #fefefe;
+    color: #fefefe;
 }
 
 .menu ul li a:hover{
     color: #abac7f;
 }
 
-/* SIDEBAR ENDS */
+.cartvalues {
+    display: inline-flex;
+}
+
+.checkoutbutton {
+    align-items: center;
+    background-color:  #abac7f;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #373d20;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.7em 1em 0.7em 1em;
+}
+
+.checkoutbutton:hover, .checkoutbutton:focus {
+    background-color:  #b9b990;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+  
+.checkoutbutton:hover {
+    transform: translateY(-2px);
+}

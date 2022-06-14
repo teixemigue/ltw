@@ -1,5 +1,5 @@
 function attachBuyEvents() {
-    for (const button of document.querySelectorAll('#dishes button'))
+    for (const button of document.getElementsByClassName('orderbutton'))
       button.addEventListener('click', function(e) {
         const article = this.parentElement
   

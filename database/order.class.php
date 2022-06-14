@@ -22,19 +22,13 @@
       $this->dish = $dish;
     }
 
-    function save($db,string $state, int $idorder) {
-      if($state == "Preparing")
-      {
-        $state = "Packaging";
-      }
-      else if($state == "Packaging")
-      {
-        $state = "Delivering";
-      }
+    function save($db) {
+      
       $stmt = $db->prepare('
-        UPDATE Request SET idorder = ?, price = ?, quantity = ?, date = ?, state = ?, user = ?, restaurant = ?, dish = ? WHERE idorder = ?');
+        UPDATE Request SET state=? 
+        WHERE idorder = ?');
 
-      $stmt->execute(array($idorder, $this->price, $this->quantity, $this->date, $state, $this->user, $this->restaurant, $this->$dish));
+      $stmt->execute(array($this->state, $this->idorder));
     }
 
     static function getUserOrders(PDO $db, int $id) : array {
@@ -93,9 +87,37 @@
       return $orders;
     }
 
-    
+    static function removeOrder(PDO $db, int $id) {
+      $stmt = $db->prepare('
+        DELETE FROM Request
+        WHERE idorder = ?
+      ');
+  
+      $stmt->execute(array($id));
+      
+    }
 
-    
+    static function getOrder(PDO $db, int $id) : Order {
+      $stmt = $db->prepare('
+        SELECT idOrder, price, quantity, date, state, restaurant, dish
+        FROM Request 
+        WHERE idorder = ?
+      ');
+      $stmt->execute(array($id));
+  
+      $order = $stmt->fetch();
+  
+      return new Order(
+        intval($order['idorder']), 
+        floatval($dish['price']),
+        intval($order['quantity']),
+        $order['date'],
+        $order['state'],
+        intval($order['user']),
+        intval($order['restaurant']),
+        intval($order['dish']),
+      );
+    }
   
   }
 ?>

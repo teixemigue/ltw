@@ -130,7 +130,7 @@
     width: 4em;
 }
 
-.order {
+.orderbutton {
     align-items: center;
     background-color:  #373d20;
     border: 1px solid transparent;
@@ -142,16 +142,16 @@
     cursor: pointer;
 }
 
-.order:hover, .order:focus {
+.orderbutton:hover, .orderbutton:focus {
     background-color:  #373d20;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-.order:hover {
+.orderbutton:hover {
     transform: translateY(-2px);
 }
 
-.order:active {
+.orderbutton:active {
     background-color: #49502d;
 }
 

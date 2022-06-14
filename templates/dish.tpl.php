@@ -58,7 +58,7 @@
               <span>&euro;</span>
               <br>
               <input class="quantity" type="number" value="1">
-              <button class="order">Order</button>
+              <button class="orderbutton">Order</button>
             </article>
           <?php } ?>
         </section>

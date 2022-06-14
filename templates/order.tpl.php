@@ -32,8 +32,8 @@
         <span>State: </span>
         <a class="state"><?=$order->state?></a>
         <?php if($session->isOwner()) : ?>
-            <button onclick="">Delete</button>
-            <button onclick="save()">Next State</button>
+            <button class="ordertrash"><a href="../actions/action_delete_order.php?id=<?=$order->idorder?>"><i class="fa fa-trash"></i></a></button>
+            <button class="ordernextstate"><a href="../actions/action_nextstate_order.php?id=<?=$order->idorder?>">Next state</a></button>
         <?php endif; ?>
     </article>
     <?php } ?>

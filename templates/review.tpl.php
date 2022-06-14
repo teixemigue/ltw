@@ -19,7 +19,7 @@
 <?php } ?>
 
 <?php function drawUserReview(?Review $review) { ?>
-    <p>You have reviewed this restaurant with <?=$review->grade?></p>
+    <p class="none">You have reviewed this restaurant with <?=$review->grade?></p>
 <?php } ?>
 
 <?php function drawReviews(array $reviews) { ?>

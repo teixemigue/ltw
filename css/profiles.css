@@ -24,6 +24,10 @@
     background-color: transparent;
     color: #080808;
 }
+
+.profile small {
+    display: none;
+}
   
 .profile label{
     display: block;

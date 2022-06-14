@@ -254,6 +254,7 @@ insert into Dish values(
     "/../photos/dish/sushi.jpg",
     "Just sushi",
     "Sushi",
+    2
 );
 
 /* review */ 

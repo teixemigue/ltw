@@ -111,7 +111,7 @@ article.places {
     color: #373d20;
     display: inline-block;
     font-size: 16px;
-    margin: 1.5em; 
+    margin: 1.5em;
     padding: 1em 2.5em 1em 2em;
 }
 
@@ -130,6 +130,7 @@ article.places {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
+    width: 200px;
 }
 
 .restname {
@@ -186,17 +187,18 @@ a.editrest, .editrest{
     color: #fefefe;
 }
 
-.editrest:hover, .editrest:focus {
+.editrest a:hover, .editrest a:focus {
     background-color:  #373d20;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
   
 .editrest:hover {
+    color: #fefefe;
     background-color: #49502d;
     transform: translateY(-2px);
 }
 
-.editrest:visited {
+.editrest a:visited, .editrest a:link {
     color: #fefefe;
 }
 
@@ -236,4 +238,8 @@ button.addrest:hover {
 
 button.addrest a:visited {
     color: #fefefe;
+}
+
+@media only screen and (max-width: 450px) {
+    
 }

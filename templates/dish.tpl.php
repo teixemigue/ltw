@@ -51,7 +51,8 @@
               <span>Name: </span>
               <a class="dishname"><?=$dish->name?></a>
               <br>
-              <a class="description">Description: <?=$dish->description?></a>
+              <span>Description: </span>
+              <a class="description"><?=$dish->description?></a>
               <br>
               <span>Price: </span>
               <a class="price"><?=$dish->price?></a>
@@ -92,7 +93,7 @@
     <small>Max. 50 characters</small>
     
     <label for="category">Category</label>
-      <select id="category" name="category">
+      <select id="categorys" name="category">
         <option value="<?=$dish->category?>" selected hidden><?=$dish->category?></option>
         <option value="Beef">Beef</option>
         <option value="Pork">Pork</option>

@@ -21,11 +21,13 @@
   $user = User::getUser($db, $session->getId());
   
   drawHeader($session);
-  
-  $orders = Order::getOrders($db,intval($user));
-  
+  if($session->isOwner()){
+    $ownerOrders = Order::getOwnerOrders($db,$session->getId());
+    drawOwnerOrders($ownerOrders,$session);
+  }
+          
+  $orders = Order::getUserOrders($db,$session->getId());
   drawOrders($orders,$session);
-
   drawFooter();
 ?>  
   

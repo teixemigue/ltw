@@ -113,7 +113,7 @@
           <p class ="username"><?=$session->getName()?> </p>
         </li>
         <li><a href="../pages/profile.php">Profile</a></li>
-        <li><a href="#">Orders</a></li>
+        <li><a href="../pages/checkout.php">Orders</a></li>
         <?php if($session->isOwner()): ?>
           <li><a href="../pages/owner_restaurants.php">Restaurants</a></li>
         <?php endif; ?>

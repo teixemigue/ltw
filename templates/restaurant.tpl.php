@@ -16,13 +16,14 @@
 <?php } ?>
 
 <?php function drawRestaurants(array $restaurants, ?array $favorites) { ?>
+  <?php if(empty($restaurants)): ?>
+    <p class="none">No restaurants found</p>
+  <?php else: ?>
+    <?php if(isset($favorites)): ?>
+      <button id="favorites" onclick="showFavoriteRestaurants()">Show Favorites</button>
+    <?php endif; ?>
+    <button id="sortreview" onclick="sortRestaurants(this)">Review &#11167;</button>
   <section id="restaurants">
-    <?php if(empty($restaurants)): ?>
-      <p class="none">No restaurants found</p>
-    <?php else: ?>
-      <?php if(isset($favorites)): ?>
-        <button id="favorites" onclick="showFavoriteRestaurants()">Show Favorites</button>
-      <?php endif; ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article data-id="<?=$restaurant->id?>" class="places">
           <?php if(isset($favorites)): ?>

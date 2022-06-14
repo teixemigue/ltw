@@ -104,9 +104,8 @@
         }
 
         return $restaurants;
+    }
 
-      }
-    
     static function getRestaurantsByCategory(PDO $db, string $category) : array {
       $stmt = $db->prepare('
       SELECT idRestaurant, name, address, photo, category, idOwner, AVG(grade) AS avgscore

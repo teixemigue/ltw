@@ -43,12 +43,12 @@
 <?php } ?>
 
 <?php function drawReviewScore(Restaurant $restaurant) { ?>
-  <?php if($restaurant->avgscore == 0): ?>
-    <p>No reviews yet</p>
+  <?php if($restaurant->avgscore === 0.0): ?>
+    <p class="avgscore">No reviews yet</p>
   <?php else: ?>
     <p class="avgscore" id="avgscore<?=$restaurant->id?>"></p>
     <script>
-      document.getElementById("avgscore<?=$restaurant->id?>").innerHTML = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
+      document.getElementById("avgscore<?=$restaurant->id?>").innerText = (Math.round(<?=$restaurant->avgscore?> * 100) / 100).toFixed(1);
     </script>
   <?php endif; ?>
 <?php } ?>

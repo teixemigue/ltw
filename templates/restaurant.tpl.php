@@ -35,7 +35,7 @@
           <?php endif; ?>
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
           <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
-          <a><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
+          <a class="restscore"><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
         </article>
       <?php } ?>
     <?php endif; ?>
@@ -50,21 +50,21 @@
     <?php else: ?>
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <a><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
-          <a href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
-          <button><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
+          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <a class="ownerrestscore"><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
+          <a class="editrest" href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
+          <button class="editrest"><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
         </article>
       <?php } ?>
     <?php endif; ?>
   </section>
-  <button><a href="../pages/register_restaurant.php">Add Restaurant</a></button>
+  <button class="addrest"><a href="../pages/register_restaurant.php">Add Restaurant</a></button>
 <?php } ?>
 
 <?php function drawRestaurantForm(Restaurant $restaurant) { ?>
   <h2 class="title">Restaurant Info</h2>
-  <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="restaurant" enctype="multipart/form-data">
+  <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="profile" enctype="multipart/form-data">
 
     <label for="photo">Photo:</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
@@ -76,7 +76,7 @@
     <input id="address" type="text" name="address" value="<?=$restaurant->address?>"> 
     
     <label for="category">Category:</label>
-      <select id="category" name="category">
+      <select id="categorys" name="category">
         <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
         <option value="Italian">Italian</option>
         <option value="Japanese">Japanese</option>

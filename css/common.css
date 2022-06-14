@@ -167,7 +167,6 @@ footer {
 
 a:link, a:visited {
     background-color: transparent;
-    display: inline-block;
     text-decoration: none;
 }
 

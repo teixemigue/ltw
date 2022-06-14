@@ -47,6 +47,22 @@
     margin: 1em;
     justify-content: center;
 }
+
+#categorys {
+    align-items: center;
+    background-clip: padding-box;
+    background-color:  #abac7f;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 1em;
+    box-sizing: border-box;
+    color: #080808;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.5em 1em 0.5em 1em;
+    margin: 1em;
+    justify-content: center;
+}
   
 .profile button {
     align-items: center;
@@ -77,7 +93,7 @@
 }
 
 .profile button:active {
-    background-color:  #abac7f;
+    background-color:  #b9b990;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
 }
 
@@ -86,9 +102,7 @@
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
 
-
-
 .profile input:active {
-    background-color:  #abac7f;
+    background-color:  #b9b990;
     box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
 }

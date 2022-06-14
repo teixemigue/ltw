@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1); ?>
 
 <?php function drawUserRegisterForm() { ?>
-  <h2>Register User</h2>
+  <h2 class="title">Register User</h2>
   <form action="../actions/action_register_user.php" method="post" class="profile" enctype="multipart/form-data">
     <div>
       <label for="photo">Photo:</label>
@@ -37,7 +37,7 @@
 <?php } ?>
 
 <?php function drawRestaurantRegisterForm() { ?>
-  <h2>Add Restaurant</h2>
+  <h2 class="title">Add Restaurant</h2>
   <form action="../actions/action_add_restaurant.php" method="post" class="profile" enctype="multipart/form-data">
     <div>
       <label for="photo">Photo:</label>
@@ -50,7 +50,7 @@
       <input id="address" type="text" name="address" placeholder="Address" required>
 
       <label for="category">Category:</label>
-      <select id="category" name="category" required>
+      <select id="categorys" name="category" required>
         <option value="" selected disabled hidden>Choose a category</option>
         <option value="Italian">Italian</option>
         <option value="Japanese">Japanese</option>
@@ -66,7 +66,7 @@
 <?php } ?>
 
 <?php function drawDishRegisterForm(int $restaurantId) { ?>
-  <h2>Add Dish</h2>
+  <h2 class="title">Add Dish</h2>
   <form action="../actions/action_add_dish.php?id=<?=$restaurantId?>" method="post" class="profile" enctype="multipart/form-data">
     <div>
       <label style="color: black" for="photo">Photo:</label>

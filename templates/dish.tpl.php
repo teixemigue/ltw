@@ -47,7 +47,7 @@
                 <?php endif; ?>
               <?php endif; ?>
 
-              <img class="dishphoto" src="https://picsum.photos/200?<?=$dish->id?>">
+              <img class="dishphoto" src="<?=$dish->photo?>">
               <span>Name: </span>
               <a class="dishname"><?=$dish->name?></a>
               <br>
@@ -76,19 +76,22 @@
   <h2 class="title">Dish Info</h2>
   <form action="../actions/action_edit_dish.php?id=<?=$dish->id?>" method="post" class="dish" enctype="multipart/form-data">
 
-    <label for="photo">Photo:</label>
+    <label for="photo">Photo</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
+    <small>Accepted formats: .png, .jpeg, .jpg</small>
 
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<?=$dish->name?>">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="Name" value="<?=$dish->name?>">
 
-    <label for="price">Price:</label>
-    <input id="price" type="text" name="price" pattern="^\d{0,4}(\.\d{1,2})" value="<?=$dish->price?>">
+    <label for="price">Price</label>
+    <input id="price" type="text" name="price" placeholder="Price" pattern="^\d{0,4}(\.\d{1,2})" value="<?=$dish->price?>">
+    <small>Format: XX.YY</small>
 
-    <label for="description">Description:</label>
-    <input id="description" type="text" name="description" value="<?=$dish->description?>"> 
+    <label for="description">Description</label>
+    <input id="description" type="text" name="description" maxlength="50" placeholder="Description" value="<?=$dish->description?>"> 
+    <small>Max. 50 characters</small>
     
-    <label for="category">Category:</label>
+    <label for="category">Category</label>
       <select id="category" name="category">
         <option value="<?=$dish->category?>" selected hidden><?=$dish->category?></option>
         <option value="Beef">Beef</option>

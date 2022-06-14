@@ -16,7 +16,8 @@
   if ($user) {
     $user->name = $_POST['name'];
     $user->username = $_POST['username'];
-    $user->password = $_POST['password'];
+    if(!empty($_POST['password']))
+      $user->password = $_POST['password'];
     $user->address = $_POST['address'];
     $user->email = $_POST['email'];
     $user->phone = $_POST['phone'];

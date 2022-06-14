@@ -13,10 +13,11 @@
   
 
   $db = getDatabaseConnection();
-  if($_GET['search'] != null)
+
+  if(isset($_GET['search']))
     $restaurants = Restaurant::getRestaurantsWithName($db, $_GET['search']);
   else {
-    if($_GET['category'] != null)
+    if(isset($_GET['category']))
       $restaurants = Restaurant::getRestaurantsByCategory($db, $_GET['category']);
     else
       $restaurants = Restaurant::getRestaurants($db);

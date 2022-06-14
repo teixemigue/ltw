@@ -29,7 +29,7 @@
       $stmt->execute(array($idorder, $this->price, $this->quantity, $this->date, $state, $this->user, $this->restaurant, $this->$dish));
     }
 
-    static function getOrders(PDO $db, int $id) : array {
+    static function getUserOrders(PDO $db, int $id) : array {
       $stmt = $db->prepare('
         SELECT idorder, price, quantity, date, state, user, restaurant, dish
         FROM Request 
@@ -57,6 +57,33 @@
       return $orders;
     }
     
+    static function getOwnerOrders(PDO $db, int $id) : array {
+      $stmt = $db->prepare('
+        SELECT idorder, price, quantity, date, state, user, restaurant, dish
+        FROM Request LEFT JOIN Restaurant ON Restaurant.idRestaurant = Request.restaurant
+        WHERE user = ? AND user = Restaurant.idOwner  
+        GROUP BY idorder
+      ');
+      $stmt->execute(array($id));
+      
+      $orders = array();
+
+      
+
+      while ($order = $stmt->fetch()) {
+        $orders[] = new Order(
+          intval($order['idorder']), 
+          floatval($order['price']),
+          intval($order['quantity']),
+          $order['date'],
+          $order['state'],
+          intval($order['user']),
+          intval($order['restaurant']),
+          intval($order['dish']),
+        );
+      }
+      return $orders;
+    }
 
     
 

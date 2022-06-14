@@ -46,7 +46,7 @@ johndoe/123456
 
 |Name               | Up Number        | Git                                         |
 | ---               | ---              | ---                                         |
-|Marcelo Apolinário |                  | [Maruselo](https://github.com/Maruselo)     |
+|Marcelo Apolinário | 201603903        | [Maruselo](https://github.com/Maruselo)     |
 |Miguel Teixeira    | 202005208        | [teixemigue](https://github.com/teixemigue) |
 |Raquel Carneiro    | 202005330        | [shinir](https://github.com/shinir)         |
 

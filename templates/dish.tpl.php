@@ -25,7 +25,7 @@
   <?php endif; ?>
 
   <?php if($session->isLoggedIn() && $session->getId() === $restaurant->owner) : ?>
-    <a class="dishadd" href="../pages/register_dish.php?id=<?=$dish->restaurant?>">Add Dish</a>
+    <a class="dishadd" href="../pages/register_dish.php?id=<?=$restaurant->id?>">Add Dish</a>
   <?php endif; ?>
 
   <section id="dishes">

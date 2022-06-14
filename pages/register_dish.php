@@ -9,6 +9,6 @@
 
 
   drawHeader($session);
-  drawDishRegisterForm($_GET['id']);
+  drawDishRegisterForm(intval($_GET['id']));
   drawFooter();
 ?>

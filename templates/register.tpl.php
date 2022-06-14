@@ -65,7 +65,7 @@
   </form>
 <?php } ?>
 
-<?php function drawDishRegisterForm(string $restaurantId) { ?>
+<?php function drawDishRegisterForm(int $restaurantId) { ?>
   <h2>Add Dish</h2>
   <form action="../actions/action_add_dish.php?id=<?=$restaurantId?>" method="post" class="profile" enctype="multipart/form-data">
     <div>

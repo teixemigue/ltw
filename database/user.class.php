@@ -56,7 +56,7 @@
         INSERT INTO User VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?)
       ');
 
-      $stmt->execute(array($data['name'], $data['username'], $data['password'], $data['address'], $data['email'], $data['phone'], $photopath, $data['option']));
+      $stmt->execute(array($data['name'], $data['username'], password_hash($data['password'], PASSWORD_DEFAULT), $data['address'], $data['email'], $data['phone'], $photopath, $data['option']));
       
       $id = $db->lastInsertId();
 
@@ -68,10 +68,10 @@
       $stmt = $db->prepare('
         SELECT idUser, name, userName, password, address, email, phoneNumber, photo, option
         FROM User 
-        WHERE username = ? AND password = ?
+        WHERE username = ?
       ');
 
-      $stmt->execute(array($username, $password));
+      $stmt->execute(array($username));
   
       if ($user = $stmt->fetch()) {
         return new User(

@@ -11,7 +11,7 @@
 
   $user = User::getUserWithPassword($db, $_POST['username'], $_POST['password']);
 
-  if ($user) {
+  if ($user && password_verify($_POST['password'], $user->password)) {
     $session->setId($user->id);
     $session->setName($user->name);
     $session->setImagePath($user->photo);

@@ -89,7 +89,7 @@ insert into User values (
     1,
     "Tester",
     "tester",
-    "***",
+    "$2y$10$Hv9n9MkalbLeGyFVqKpsDem9wUvn6RqYJYIKcj8Gy4oDpA60DdElK",
     "feup",
     "tester@gmail.com",
     "935768549",

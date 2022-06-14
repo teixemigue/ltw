@@ -26,7 +26,7 @@
   <input id="email" type="email" name="email" value="<?=$user->email?>">
 
   <label for="phone">Phone number</label>
-  <input id="phone" type="text" name="phone" value="<?=$user->phone?>">
+  <input id="phone" type="text" name="phone" value="<?=$user->phone?>" pattern="\d{9}$">
   
   <button type="submit">Save</button>
 </form>

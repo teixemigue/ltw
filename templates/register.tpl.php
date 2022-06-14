@@ -26,7 +26,7 @@
       <input id="email" type="email" name="email" placeholder="E-mail" required>
 
       <label for="phone">Phone number</label>
-      <input id="phone" type="text" name="phone" placeholder="Phone number" required>
+      <input id="phone" type="text" name="phone" placeholder="Phone number" pattern="\d{9}$" required>
       
       <label for="option">User type</label>
       <select id="option" name="option" required>

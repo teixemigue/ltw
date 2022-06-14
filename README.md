@@ -35,12 +35,7 @@
 
 ## Credentials
 
-ex:
-admin/v3rystr0ngp4a55w0rd
-\
-lapizzeria/myr3staurantisth3best
-\
-johndoe/123456
+tester/***
 
 ## Members
 

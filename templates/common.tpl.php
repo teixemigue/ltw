@@ -21,7 +21,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/dishes.css">
-    
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/order.css"> 
     <link rel="stylesheet" href="../css/profiles.css">  
     <link rel="stylesheet" href="../css/restaurant.css">  
     <link rel="stylesheet" href="../css/register.css"> 
@@ -71,15 +72,7 @@
 
 <?php function drawLoginForm() { ?>
   <a href="../pages/register_profile.php" class="register">Register</a> 
-  <form action="../actions/action_login.php" method="post" enctype="multipart/form-data">
-    <div class="login">
-      <label for="Username">Username</label>
-      <input type="text" name="username" placeholder="username">
-      <label for="Password">Password</label>
-      <input type="password" name="password" placeholder="password">
-      <button type="submit">Login</button>
-    </div>
-  </form>
+  <a href="../pages/login.php" class="loginbut">Login</a> 
 <?php } ?>
 
 <?php function drawLogoutForm(Session $session) { ?>
@@ -154,8 +147,8 @@
 
   <script>
     function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
+      document.getElementById("mySidebar").style.width = "350px";
+      document.getElementById("main").style.marginLeft = "350px";
       document.getElementById("buttonsidebar").style.visibility = "hidden";
     }
 

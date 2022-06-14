@@ -11,6 +11,7 @@
 ?>
 <?php function drawOwnerOrders(array $orders, Session $session) { ?>
   <section id="orders">    
+    <h2 class="title">Orders</h2>
     <?php foreach ($orders as $order) { ?>
         <?php $db = getDatabaseConnection();
               $dish = Dish::getDish($db,intval($order->dish)); ?>
@@ -31,9 +32,12 @@
         <br>
         <span>State: </span>
         <a class="state"><?=$order->state?></a>
+        <br>
         <?php if($session->isOwner()) : ?>
+          <a>
             <button class="ordertrash"><a href="../actions/action_delete_order.php?id=<?=$order->idorder?>"><i class="fa fa-trash"></i></a></button>
             <button class="ordernextstate"><a href="../actions/action_nextstate_order.php?id=<?=$order->idorder?>">Next state</a></button>
+          </a>
         <?php endif; ?>
     </article>
     <?php } ?>

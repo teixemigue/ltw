@@ -21,5 +21,5 @@
     $session->addMessage('error', 'Wrong username and/or password!');
   }
 
-  header('Location: ' . $_SERVER['HTTP_REFERER']);
+  header('Location: ../pages/index.php');
 ?>

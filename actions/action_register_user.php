@@ -18,5 +18,5 @@
   $session->addMessage('success', 'Registration successful!');
 
   header('Location: ../pages/index.php');
-  
+
 ?>

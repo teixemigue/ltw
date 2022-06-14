@@ -7,7 +7,7 @@
   require_once(__DIR__ . '/../templates/common.tpl.php');
   require_once(__DIR__ . '/../templates/user.tpl.php');
   require_once(__DIR__ . '/../database/dish.class.php');
-
+  require_once(__DIR__ . '/../database/order.class.php');
 ?>
 <?php function drawOwnerOrders(array $orders, Session $session) { ?>
   <section id="orders">    
@@ -33,7 +33,7 @@
         <a class="state"><?=$order->state?></a>
         <?php if($session->isOwner()) : ?>
             <button onclick="">Delete</button>
-            <button onclick="">Next State</button>
+            <button onclick="save()">Next State</button>
         <?php endif; ?>
     </article>
     <?php } ?>

@@ -23,6 +23,14 @@
     }
 
     function save($db,string $state, int $idorder) {
+      if($state == "Preparing")
+      {
+        $state = "Packaging";
+      }
+      else if($state == "Packaging")
+      {
+        $state = "Delivering";
+      }
       $stmt = $db->prepare('
         UPDATE Request SET idorder = ?, price = ?, quantity = ?, date = ?, state = ?, user = ?, restaurant = ?, dish = ? WHERE idorder = ?');
 

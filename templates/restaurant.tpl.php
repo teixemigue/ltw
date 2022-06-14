@@ -34,7 +34,7 @@
             <?php endif; ?>
           <?php endif; ?>
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <img src="<?=$restaurant->photo?>" class="restphoto">
           <a class="restscore"><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
         </article>
       <?php } ?>
@@ -51,7 +51,7 @@
       <?php foreach($restaurants as $restaurant) { ?> 
         <article class="places">
           <a href="../pages/restaurant.php?id=<?=$restaurant->id?>" class="restname"><?=$restaurant->name?></a>
-          <img src="https://picsum.photos/200?<?=$restaurant->id?>" class="restphoto">
+          <img src="<?=$restaurant->photo?>" class="restphoto">
           <a class="ownerrestscore"><b>Review Score: </b><?php drawReviewScore($restaurant) ?></a>
           <a class="editrest" href="../pages/edit_restaurant.php?id=<?=$restaurant->id?>">Edit Restaurant Info</a>
           <button class="editrest"><a href="../actions/action_delete_restaurant.php?id=<?=$restaurant->id?>">Remove Restaurant</a></button>
@@ -66,16 +66,17 @@
   <h2 class="title">Restaurant Info</h2>
   <form action="../actions/action_edit_restaurant.php?id=<?=$restaurant->id?>" method="post" class="profile" enctype="multipart/form-data">
 
-    <label for="photo">Photo:</label>
+    <label for="photo">Photo</label>
     <input id="photo" type="file" name="photo" accept=".png, .jpeg, .jpg">
+    <small>Accepted formats: .png, .jpeg, .jpg</small>
 
-    <label for="name">Name:</label>
-    <input id="name" type="text" name="name" value="<?=$restaurant->name?>">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" placeholder="Name" value="<?=$restaurant->name?>">
     
-    <label for="address">Address:</label>
-    <input id="address" type="text" name="address" value="<?=$restaurant->address?>"> 
+    <label for="address">Address</label>
+    <input id="address" type="text" name="address" placeholder="Address" value="<?=$restaurant->address?>"> 
     
-    <label for="category">Category:</label>
+    <label for="category">Category</label>
       <select id="categorys" name="category">
         <option value="<?=$restaurant->category?>" selected hidden><?=$restaurant->category?></option>
         <option value="Italian">Italian</option>

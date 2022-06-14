@@ -102,8 +102,8 @@ insert into User values (
 insert into Restaurant values(
 
     1,
-    "pizaplex",
-    "rua da pizza",
+    "Pizzaplex",
+    "Rua de Santo Antonio",
     "/../photos/restaurant/default.jpg",
     "Italian",
     1
@@ -112,8 +112,8 @@ insert into Restaurant values(
 insert into Restaurant values(
 
     2,
-    "sushi place",
-    "rua do sushi",
+    "Sushi place",
+    "Rua de Santa Catarina",
     "/../photos/restaurant/default.jpg",
     "Japanese",
     1
@@ -122,363 +122,138 @@ insert into Restaurant values(
 insert into Restaurant values(
 
     3,
-    "100 montaditos",
-    "rua do S. João",
+    "100 Montaditos",
+    "Rua de S. João",
     "/../photos/restaurant/default.jpg",
     "Traditional",
     1
 );
+insert into Restaurant values(
 
-/* prato */
+    4,
+    "Star bucks",
+    "Rua das Estrelas",
+    "/../photos/restaurant/starbucks.jpg",
+    "Modern",
+    1
+);
+insert into Restaurant values(
+
+    5,
+    "Hamburgueria",
+    "Rua das Estrelas",
+    "/../photos/restaurant/hamburgueria.jpg",
+    "Hamburguers",
+    1
+);
+insert into Restaurant values(
+
+    6,
+    "Lapa maki",
+    "Rua da lapa",
+    "/../photos/restaurant/lapamaki.jpg",
+    "Japanese",
+    1
+);
+/* pratos */
 insert into Dish values(
 
     1,
-    "novo prato",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Limonada",
+    3.00,
+    "/../photos/dish/limonada.jpg",
+    "Refrescante",
+    "Bebida",
+    4
 );
 insert into Dish values(
 
     2,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Fruit Punch",
+    15.50,
+    "/../photos/dish/fruitpunch.jpg",
+    "Suave",
+    "Bebida",
+    4
 );
 insert into Dish values(
 
     3,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Big boy",
+    7.86,
+    "/../photos/dish/hamburguer2.jpg",
+    "Extremamente delicioso",
+    "Hamburguer",
+    5
 );
 insert into Dish values(
 
     4,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Menu big burguer",
+    14.21,
+    "/../photos/dish/hamburguer.jpg",
+    "Acompanhado de batatas",
+    "Hamburguer",
+    5
 );
 insert into Dish values(
 
     5,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Lasanha dupla",
+    10.30,
+    "/../photos/dish/lasanha2.jpg",
+    "So para os mais corajosos",
+    "Lasanha",
+    3
 );
 insert into Dish values(
 
     6,
-    "pizza",
-    12.30,
+    "Lasanha simples",
+    6.70,
     "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Especialidade",
+    "Lasanha",
+    3
 );
 insert into Dish values(
 
     7,
-    "pizza",
+    "Pizza",
     12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
+    "/../photos/dish/pizza.jpg",
+    "Com bacon e cogumelos",
     "Pizza",
     1
 );
 insert into Dish values(
 
     8,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Sushi maki",
+    11.00,
+    "/../photos/dish/sushi.jpg",
+    "Melhor sushi de portugal",
+    "Sushi",
+    6
 );
 insert into Dish values(
 
     9,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Sushi tun",
+    10.30,
+    "/../photos/dish/sushi2.jpg",
+    "Best sushi",
+    "Sushi",
+    6
 );
 insert into Dish values(
 
     10,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    11,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    12,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    13,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    14,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    15,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    16,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    17,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    18,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    19,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    20,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    21,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    22,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    23,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    24,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    25,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    26,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    27,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    28,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    29,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    30,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    31,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    32,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    33,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    34,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
-);
-insert into Dish values(
-
-    35,
-    "pizza",
-    12.30,
-    "/../photos/dish/default.jpg",
-    "E muito bom",
-    "Pizza",
-    1
+    "Sushi teko",
+    13.00,
+    "/../photos/dish/sushi.jpg",
+    "Just sushi",
+    "Sushi",
 );
 
 /* review */ 
